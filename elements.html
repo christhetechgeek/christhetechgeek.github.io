@@ -9,8 +9,8 @@
 		<title>Elements Reference - Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -61,6 +61,46 @@
 									<h6>Heading Level 6</h6>
 									<hr />
 									<header>
+										<py-script>	print("Hello, I'm Chris The Tech Geek, welcome to my computer quiz!")
+
+											playing = input("Would you like to play? ")
+											
+											if playing.lower() != "yes":
+												quit()
+												
+											print("Great! Let's begin!")
+											score = 0
+											
+											answer = input("What does CPU stand for? ")
+											if answer.lower() == "central processing unit":
+												print('Correct!')
+												score += 1
+											else:
+												print("Incorrect")
+											
+											answer = input("What does GPU stand for? ")
+											if answer.lower() == "graphics processing unit":
+												print('Correct!')
+												score += 1
+											else:
+												print("Incorrect")
+											
+											answer = input("What does RAM stand for? ")
+											if answer.lower() == "random access memory":
+												print('Correct!')
+												score += 1
+											else:
+												print("Incorrect")
+											
+											answer = input("What does ROM stand for? ")
+											if answer.lower() == "read only memory":
+												print('Correct!')
+												score += 1
+											else:
+												print("Incorrect")
+											
+											print("You got " + str(score) + " questions correct!")
+											print("You got " + str((score / 4) * 100) + "%.") <py-script>
 										<h2>Heading with a Subtitle</h2>
 										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
 									</header>

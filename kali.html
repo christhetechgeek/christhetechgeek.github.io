@@ -130,14 +130,63 @@
 							<!-- Posts -->
 							<article>
 								<header>
-									<h2><a href="#"><br />
-								   
+									<h2><a href="#">Lab 4 Conducting a dictionary attack to crack online passwords using Hydra<br />
+										
 								</header>
-								<a href="" class="image main"><img src="" alt="" /></a>
-							</a></h2>
-							<p><p>
-								<p><p>
-								<p></p>
+								<p>Task 1: Open Hydra help</p>
+								<p>sudo hydra</p>
+								<p>Type: hydra -h</p>
+								<p>(this will bring up help menu and see what kind of attacks we can run)</p>
+								<a href="images/hydra_help.png" class="image main"><img src="images/hydra_help.png" alt="" /></a>
+							
+							<p>Task 2: The site we are targeting<p>
+								<p>http://testasp.vulnweb.com/Login.asp?RetURL=/Default.asp?<p>
+								<p>Note:  this site has been developed for the purpose of hacking, and you should not use Hydra on any other site without permission from the owner.</p>
+								<a href="images/testasp.png" class="image main"><img src="images/testasp.png" alt="" /></a>
+								<p>Open the site in Kali Firefox, then press: Ctrl + Shift + i<p></p>
+								<p>(will open the browser developers tools panel)<p></p>
+								<p>Click on "Network", then, reload the page by pressing Ctrl + F5<p></p>
+								<p>You should see several GET requests. This is our machine requesting data from the server so that we can see the login form.<p></p>
+								<a href="images/get_requests.png" class="image main"><img src="images/get_requests.png" alt="" /></a>
+								<p>Now enter a random username and password and click login. New POST request will pop up in the network tab.<p></p>
+								<p>This is our machine sending the data to the server. This request contains the parameters we need.</p>
+								<a href="images/get_request_login.png" class="image main"><img src="images/get_request_login.png" alt="" /></a>
+								<p>Task 3: Right click on the POST request and select “Edit and Resend”. A page will open to the right (or left) of the Network header, with information regarding the POST request.<p></p>
+								<a href="images/edit_resend.png" class="image main"><img src="images/edit_resend.png" alt="" /></a>
+								<p>Scroll down to the Request Body section and copy the tfUName and tfUPass Parameters..<p></p>
+								<a href="images/edit_resend_2.png" class="image main"><img src="images/edit_resend_2.png" alt="" /></a>
+								<p>Task 4: Prepare attack to login as admin. Open the terminal and type: cd /usr/share/wordlists
+									.<p></p>
+									<p>Then use the following command to extract the file:
+										.<p></p>
+										<p>gunzip rockyou.txt.gz
+											.<p></p>
+											<p>Type "ls" (without quotatons) into the terminal after this and you will see that the rockyou.txt file is now available.
+												.<p></p>
+												<a href="images/rockyou.png" class="image main"><img src="images/rockyou.png" alt="" /></a>
+												<p>Task 5: ATTACK!!! Type in the following command:
+													.<p>hydra -l admin -P /usr/share/wordlists/rockyou.txt testasp.vulnweb.com http-post-form “/Login.asp?RetURL=/Default.asp?:tfUName=^USER^&tfUPass=^PASS^:S=logout” -vV -f
+
+														images/attack_code</p>
+														<p>hydra will start guessing a lot of passwords for the username admin in an attempt to login. Stop with Ctrl + C.
+															<a href="images/attack_code_1.png" class="image main"><img src="images/attack_code_1.png" alt="" /></a>
+															<p>Now some explanation to the code we ran:
+																.<p></p>
+																<p>-l is the username we will be logging in as
+																	.<p></p>
+																	<p>-P is the wordlist we will be using to guess the password for this user
+																		.<p></p>
+																		<p>http-post-form is the type of request hydra will be sending to the server in order for us to login
+																			.<p></p>
+																			<p>“/Login.asp?RetURL=/Default.asp?:tfUName=^USER^&tfUPass=^PASS^:S=logout” – This is the actual request hydra is sending to the server, it will replace USER and PASS with the -l and -P values we specified earlier
+																				.<p></p>
+																				<p>-vV will show us each of the username and password login attempts
+																					.<p></p>
+																					<p>-f will finish that attack when the correct username and password combination is entered
+																						.<p></p>
+
+
+
 								
 							</article>
 

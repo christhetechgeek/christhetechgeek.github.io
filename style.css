@@ -104,7 +104,7 @@ section{
 }
 
 .home-content h1{
-    font-size var(--big-font);
+    font-size: var(--big-font);
     font-weight: 700;
 }
 
@@ -287,3 +287,5 @@ a.btn:nth-child(2)::before{
     max-width: 350px;
     height: auto;
 }
+
+

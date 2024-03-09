@@ -2,3 +2,7 @@ div.center {
   text-align: center;
   
 }
+
+#container {
+position: left;
+}

@@ -6,7 +6,7 @@
     display: block;
   }
   body {
-    background-image: url("https://media.giphy.com/media/gGW4s3QsH3pTGv6oQ0/giphy.gif");
+    background: white;
     font:
       1.2em Helvetica,
       arial,
@@ -19,7 +19,7 @@
   }
   
   h2 {
-    background-color: black;
+    background-color: orange;
     color: #fff;
     text-align: center;
     margin: 0;

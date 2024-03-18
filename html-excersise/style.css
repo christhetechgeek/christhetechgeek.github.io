@@ -6,7 +6,7 @@
     display: block;
   }
   body {
-    background: white;
+    background: black;
     font:
       1.2em Helvetica,
       arial,
@@ -15,7 +15,7 @@
   a:link,
   a:visited {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   
   h2 {
@@ -28,6 +28,7 @@
   
   p {
     text-align: center;
+    color: white;
   }
   
   .listing {
@@ -39,14 +40,14 @@
   }
   
   .listing li {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
   }
   .listing .cta {
     margin-top: auto;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     padding: 10px;
     text-align: center;
   }

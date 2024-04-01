@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      My Time @ Google
+    </title>
+    
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background: #2e364a;
+      }
+      
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 100px auto;
+      }
+      
+      .container {
+        padding: 10px;
+        position: relative;
+        width: 50%;
+        animation: movedown 1s linear forwards;
+        opacity: 0;
+      }
+      
+      @keyframes movedown {
+        0%{
+          opacity: 1;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      
+      .container:nth-child(1) {
+        animation-delay: 0s;
+      }
+      
+      .container:nth-child(2) {
+        animation-delay: 1s;
+      }
+      
+      .container:nth-child(3) {
+        animation-delay: 2s;
+      }
+      
+      .container:nth-child(4) {
+        animation-delay: 3s;
+      }
+      
+      .container:nth-child(5) {
+        animation-delay: 4s;
+      }
+      
+      .container:nth-child(6) {
+        animation-delay: 5s;
+      }
+      
+      .container:nth-child(7) {
+        animation-delay: 6s;
+      }
+      
+      .text-box {
+        padding: 20px 30px;
+        background: #fff;
+        position: relative;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+      
+      .left-container{
+        left: 0;
+      }
+      
+      .right-container{
+        left: 50%;
+      }
+      
+      .container img {
+        position: absolute;
+        width: 40px;
+        border-radius: 50%;
+        right: -20px;
+        top: 32px;
+        z-index: 10;
+      }
+      
+      .right-container img {
+        left: -20px;
+      }
+      
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        background: #fff;
+        top: 0;
+        left: 50%;
+        margin-left: -3px;
+        z-index: -1;
+        animation: moveline 6s linear forwards;
+      }
+      
+      @keyframes moveline {
+        0% {
+          height: 0;
+        }
+        100% {
+          height: 100%;
+        }
+      }
+      
+      .text-box h2 {
+        font-weight: 600;
+      }
+      
+      .text-box small {
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+      
+      .left-container-arrow {
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #fff;
+        right: -15px;
+      }
+      
+      .right-container-arrow {
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 28px;
+        z-index: 1;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid #fff;
+        left: -15px;
+      }
+      
+      @media screen and (max-width: 600px) {
+        
+        .timeline {
+          margin: 50px auto;
+        }
+        .timeline::after {
+          left: 31px;
+        }
+        .container {
+          width: 100%;
+          padding-left: 80px;
+          padding-right: 25px;
+        }
+        .text-box {
+          font-size: 13px;
+        }
+        
+        .text-box small {
+          margin-bottom: 10px;
+        }
+        
+        .right-container {
+          left: 0;
+        }
+        
+        .left-container img, .right-container img {
+          left: 10px;
+        }
+        
+        .left-container-arrow, .right-container-arrow {
+          border-right: 15px solid #fff;
+          border-left: 0;
+          left: -15px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div class="timeline">
+      
+      <div class="container left-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>Google</h2>
+          <small>My journey begins - September 2023</small>
+          <p>This is the start to a whole new beginning and I will not let this opportunity pass me by.</p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container right-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>The Collective Capstone Event.</h2>
+          <small>New York - March 2024</small>
+          <p>The celebration of BGN and black excellence all around the world.</p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container left-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>Google Data Center - Papillion</h2>
+          <small>Nebraska - April 2024</small>
+          <p>The first of plenty that I will be able to lend a hand to regarding Machine Learning and as always share my programming knowledge and/or assistance</p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container right-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>Code with Chris</h2>
+          <small>New code trianing for LNR - May 2024</small>
+          <p>This is my opportunity to truly unlock peoples creativity especially with coding languages that seem more daunting than easy to learn</p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container left-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>Machine Learning College</h2>
+          <small>Learning never stops - June 2024</small>
+          <p>The point of learning is not just to absorb information but to be able to teach others in a concise and effective manner that helps them and you continously grow</p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container right-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>??????????????????</h2>
+          <small>??????????????????</small>
+          <p>?????????????????????????????????????</p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      
+      <div class="container left-container">
+        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+        <div class="text-box">
+          <h2>??????????????????</h2>
+          <small>??????????????????</small>
+          <p>?????????????????????????????????????</p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>

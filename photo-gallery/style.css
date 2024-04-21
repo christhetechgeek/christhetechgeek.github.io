@@ -104,33 +104,7 @@ Label:hover {
     transition: .5s;
 }
 
-.pic::before {
-    content: "Right-Click > open in new tab";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    width: 100%;
-    margin-top: -100px;
-    opacity: 0;
-    transition: .3s;
-    transition-delay: .2s;
-}
 
-.pic:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    border-radius: 10px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .4);
-    transition: .3s;
-}
 
 .pic:hover::after {
     height: 100;

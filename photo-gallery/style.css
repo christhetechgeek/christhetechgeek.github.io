@@ -130,6 +130,7 @@ Label:hover {
 }
 
 #check2:checked ~ .container .photo-gallery .gaming,
+#check2:checked ~ .container .photo-gallery .google,
 #check2:checked ~ .container .photo-gallery .others {
     opacity: 0;
     transform: scale(0);
@@ -145,22 +146,40 @@ Label:hover {
 }
 
 #check3:checked ~ .container .photo-gallery .names,
-#check3:checked ~ .container .photo-gallery .others {
+#check3:checked ~ .container .photo-gallery .others,
+#check3:checked ~ .container .photo-gallery .google {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
 }
 
-#check4:checked ~ .container .photo-gallery .others {
+#check4:checked ~ .container .photo-gallery .google {
     opacity: 1;
     transform: scale(1);
     position: relative;
     
 }
 
+#check4:checked ~ .container .photo-gallery .others,
 #check4:checked ~ .container .photo-gallery .names,
 #check4:checked ~ .container .photo-gallery .gaming {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .0s;
+}
+
+#check5:checked ~ .container .photo-gallery .others {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    
+}
+
+#check5:checked ~ .container .photo-gallery .google,
+#check5:checked ~ .container .photo-gallery .names,
+#check5:checked ~ .container .photo-gallery .gaming {
     opacity: 0;
     transform: scale(0);
     position: absolute;

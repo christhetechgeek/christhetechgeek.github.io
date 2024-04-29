@@ -190,17 +190,17 @@ Label:hover {
     transition: .0s;
 }
 
-#check5:checked ~ .container .photo-gallery .warframe {
+#check6:checked ~ .container .photo-gallery .warframe {
     opacity: 1;
     transform: scale(1);
     position: relative;
     
 }
 
-#check5:checked ~ .container .photo-gallery .google,
-#check5:checked ~ .container .photo-gallery .names,
-#check5:checked ~ .container .photo-gallery .gaming,
-#check5:checked ~ .container .photo-gallery .others {
+#check6:checked ~ .container .photo-gallery .google,
+#check6:checked ~ .container .photo-gallery .names,
+#check6:checked ~ .container .photo-gallery .gaming,
+#check6:checked ~ .container .photo-gallery .others {
     opacity: 0;
     transform: scale(0);
     position: absolute;

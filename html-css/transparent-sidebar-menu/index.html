@@ -1,67 +1,29 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0">
-    <title> Chris, The Tech Geek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris the Tech Geek | Systems Architect</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-   </head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
 <body>
-  <div class="main_box">
-    <input type="checkbox" id="check">
-    <div class="btn_one">
-      <label for="check">
-        <i class="fas fa-bars"></i>
-      </label>
-    </div>
-    <div class="sidebar_menu">
-      <div class="logo">
-        <a href="#">Front End Dev</a>
-          </div>
-        <div class="btn_two">
-          <label for="check">
-            <i class="fas fa-times"></i>
-          </label>
+    <div class="tech-shell">
+        <div id="pillar-logo-container" class="logo-morph">
+            <div id="pillar-logo"></div>
         </div>
-      <div class="menu">
-        <ul>
-          <li><i class="fa fa-graduation-cap"></i>
-            <a href="/timeline/index.html">Let's Learn</a>
-          </li>
-          <li>
-            <i class="fas fa-link"></i>
-            <a href="/certifications/index.html">Certifications</a>
-          </li>
-          <li>
-            <i class="fa fa-cubes"></i>
-            <a href="https://www.figma.com/proto/avlMO88ZFijCrl07Ykdmew/Untitled?page-id=0%3A1&node-id=29-47&p=f&viewport=172%2C246%2C0.52&t=f4MsiRhQBHv61cH6-1&scaling=min-zoom&content-scaling=fixed">Figma</a>
-          </li>
-          <li>
-            <i class="fa fa-cube"></i>
-            <a href="/photo-gallery/index.html">Logos</a>
-          </li>
-          <li>
-            <i class="fa fa-cube"></i>
-            <a href="/about_me/index.html">About Me</a>
-          </li>
-          
-          
-          
-        </ul>
-      </div>
-      <div class="social_media">
-        <ul>
-          <a href="https://www.linkedin.com/in/christopher-howard-15793a71/"><i class="fa fa-user-secret"></i></a>
-          <a href="https://github.com/christhetechgeek/christhetechgeek.github.io"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fa fa-envelope"></i></a>
-          
-        </ul>
-      </div>
-    </div>
-  </div>
-  </body>
 
+        <nav class="kingdom-nav">
+            <button class="nav-btn active" onclick="ignitePillar('ai', event)">AI</button>
+            <button class="nav-btn" onclick="ignitePillar('hardware', event)">HARDWARE</button>
+            <button class="nav-btn" onclick="ignitePillar('gaming', event)">GAMING</button>
+            <button class="nav-btn" onclick="ignitePillar('tech', event)">TECH</button>
+            <button class="nav-btn" onclick="ignitePillar('dev', event)">DEV</button>
+        </nav>
+
+        <main id="pillar-stage">
+            </main>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

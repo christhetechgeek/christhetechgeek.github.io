@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Cyberpunk 2077 (OLED Settings)",
+    "keywords": "cyberpunk 2077 oled hdr raytracing settings",
+    "info": "VERIFIED: HDR10 PQ Enabled. Peak Brightness: 1000 nits. DLSS Frame Gen: ON. Optimized for QD-OLED black levels.",
+    "link": "https://christhetechgeek.github.io/scripts/cp2077-optim"
+  },
+  {
+    "name": "Windows HDR Global Calibration",
+    "keywords": "windows 11 hdr calibration tool peak brightness",
+    "info": "VERIFIED: Set Minimum Luminance to 0. Set Maximum Luminance to 1000. Disable Auto-HDR for competitive titles.",
+    "link": "https://christhetechgeek.github.io/scripts/hdr-calibrator"
+  }
+]

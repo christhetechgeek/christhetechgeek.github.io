@@ -92,10 +92,14 @@ function fillSearch(term) {
 }
 
 async function unifiedSearch() {
-    const query = document.getElementById('globalSearch').value.toLowerCase();
+    const input = document.getElementById('globalSearch');
+    if (!input) return;
+    
+    const query = input.value.toLowerCase().trim();
     const list = document.getElementById('output-list');
     const container = document.getElementById('results-container');
 
+    // Return early if the query is too short
     if (query.length < 2) {
         container.classList.add('results-hidden');
         return;
@@ -103,8 +107,18 @@ async function unifiedSearch() {
 
     try {
         const response = await fetch(`./data/${activePillar}.json`);
+        if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+        
         const data = await response.json();
-        const matches = data.filter(item => item.name.toLowerCase().includes(query) || item.keywords.toLowerCase().includes(query));
+
+        // THE FIX: Improved logic to check names, descriptions, AND keywords
+        const matches = data.filter(item => {
+            const nameMatch = item.name.toLowerCase().includes(query);
+            const infoMatch = item.info.toLowerCase().includes(query);
+            const keywordMatch = item.keywords.toLowerCase().split(' ').some(kw => kw.startsWith(query) || query.includes(kw));
+            
+            return nameMatch || infoMatch || keywordMatch;
+        });
 
         if (matches.length > 0) {
             container.classList.remove('results-hidden');
@@ -118,7 +132,7 @@ async function unifiedSearch() {
         } else {
             container.classList.add('results-hidden');
         }
-    } catch (err) { console.error("Pipeline Error:", err); }
+    } catch (err) {
+        console.error("SYSTEM AUDIT ERROR:", err);
+    }
 }
-
-window.onload = () => ignitePillar('ai');

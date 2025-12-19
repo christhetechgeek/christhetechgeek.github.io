@@ -93,46 +93,56 @@ function fillSearch(term) {
 
 async function unifiedSearch() {
     const input = document.getElementById('globalSearch');
-    if (!input) return;
-    
     const query = input.value.toLowerCase().trim();
     const list = document.getElementById('output-list');
     const container = document.getElementById('results-container');
 
-    // Return early if the query is too short
     if (query.length < 2) {
         container.classList.add('results-hidden');
         return;
     }
 
     try {
+        // STEP 1: ATTEMPT TO FETCH LOCAL VERIFIED DATA
         const response = await fetch(`./data/${activePillar}.json`);
-        if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
-        
         const data = await response.json();
+        
+        let matches = data.filter(item => 
+            item.name.toLowerCase().includes(query) || 
+            item.keywords.toLowerCase().includes(query)
+        );
 
-        // THE FIX: Improved logic to check names, descriptions, AND keywords
-        const matches = data.filter(item => {
-            const nameMatch = item.name.toLowerCase().includes(query);
-            const infoMatch = item.info.toLowerCase().includes(query);
-            const keywordMatch = item.keywords.toLowerCase().split(' ').some(kw => kw.startsWith(query) || query.includes(kw));
-            
-            return nameMatch || infoMatch || keywordMatch;
-        });
+        container.classList.remove('results-hidden');
 
         if (matches.length > 0) {
-            container.classList.remove('results-hidden');
+            // RENDER LOCAL VERIFIED RESULTS
             list.innerHTML = matches.map(item => `
                 <div class="card">
                     <span class="card-title">${item.name}</span>
                     <p class="card-desc">${item.info}</p>
-                    <a href="${item.link}" target="_blank" class="action-btn">ACQUIRE VERIFIED LOGIC</a>
+                    <a href="${item.link}" target="_blank" class="action-btn">ACQUIRE VERIFIED COMPONENT</a>
                 </div>
             `).join('');
         } else {
-            container.classList.add('results-hidden');
+            // STEP 2: FORWARD THINKING FALLBACK
+            // If local data is missing, we trigger the AI Intelligence Layer
+            list.innerHTML = `
+                <div class="card" style="border-style: dashed; border-color: #555;">
+                    <span class="card-title">GLOBAL ORACLE SEARCH</span>
+                    <p class="card-desc">No local verified entry for "${query}" found in the Hickory Vault. Initialize Global AI Search for 2015-2026+ data?</p>
+                    <button class="action-btn" onclick="consultOracle('${query}')">CONSULT THE ORACLE</button>
+                </div>
+            `;
         }
     } catch (err) {
-        console.error("SYSTEM AUDIT ERROR:", err);
+        console.error("Pipeline Failure:", err);
     }
+}
+
+// THE GENERATIVE BRIDGE: This handles the "World of Many" automatically
+function consultOracle(query) {
+    // In a production environment, this would call a Gemini API.
+    // For now, it provides a direct deep-link to an AI-driven search for that specific hardware.
+    const oracleUrl = `https://www.google.com/search?q=site:techpowerup.com+${query}+specs+release+date`;
+    window.open(oracleUrl, '_blank');
 }

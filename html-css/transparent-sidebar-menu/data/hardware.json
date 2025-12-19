@@ -1,14 +1,26 @@
 [
   {
-    "name": "Microsoft Surface Pro (11th Ed)",
-    "keywords": "surface pro 11 copilot pc snapdragon ssd upgrade",
-    "info": "VERIFIED: Sabrent Rocket Q4 2230 M.2 SSD (2TB). Verified for physical clearance and thermal stability in the SP11 chassis.",
-    "link": "https://amzn.to/your-affiliate-link"
+    "name": "Western Digital Black SN850X (8TB)",
+    "keywords": "wd black 8tb nvme ssd storage high capacity m.2",
+    "info": "VERIFIED: 7,300 MB/s Read. The high-capacity ceiling for Gen4 M.2 slots. Ideal for massive technical libraries.",
+    "link": "https://amzn.to/example"
+  },
+  {
+    "name": "Microsoft Surface Pro (Copilot+ Edition)",
+    "keywords": "surface pro 11 copilot snapdragon x elite laptop",
+    "info": "VERIFIED: Snapdragon X Elite architecture. Optimized for 2230 M.2 SSD upgrades and AI-driven efficiency.",
+    "link": "https://amzn.to/example"
   },
   {
     "name": "Alienware 32 4K QD-OLED (AW3225QF)",
-    "keywords": "alienware monitor 4k oled 240hz dsc cable",
-    "info": "VERIFIED: Ultra High Speed HDMI 2.1 (48Gbps). Necessary for 4K @ 240Hz without signal dropouts.",
-    "link": "https://amzn.to/your-affiliate-link"
+    "keywords": "alienware 32 4k monitor qd-oled 240hz gaming",
+    "info": "VERIFIED: 240Hz 4K QD-OLED. Requires Ultra-High-Speed HDMI 2.1 or DP 1.4 with DSC for full fidelity.",
+    "link": "https://amzn.to/example"
+  },
+  {
+    "name": "Sabrent Rocket Q4 2230 (2TB)",
+    "keywords": "sabrent rocket 2230 ssd steam deck surface pro upgrade",
+    "info": "VERIFIED: The gold standard for 2230 form-factor upgrades in Surface Pro and handheld gaming devices.",
+    "link": "https://amzn.to/example"
   }
 ]

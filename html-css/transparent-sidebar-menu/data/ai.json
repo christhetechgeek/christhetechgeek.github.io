@@ -1,14 +1,20 @@
 [
   {
-    "name": "Advanced Code Auditor",
-    "keywords": "programming debug logic security code review clean",
-    "info": "VERIFIED: A high-level logic-check prompt that identifies 'Memory Leakage' and security bottlenecks in Python and JavaScript.",
-    "link": "https://christhetechgeek.github.io/oracle/code-auditor"
+    "name": "Human-Centric Logic Auditor",
+    "keywords": "prompt engineering logic audit code review empathy",
+    "info": "VERIFIED: A prompt architecture designed to audit technical systems for human ease-of-use and empathetic UX flow.",
+    "link": "#"
   },
   {
-    "name": "Wealth Strategy Architect",
-    "keywords": "finance budget vanguard surge passive income 20 year plan",
-    "info": "VERIFIED: A deterministic prompt for building 20-year financial roadmaps based on the 'Surge/Breathing' monthly logic.",
-    "link": "https://christhetechgeek.github.io/oracle/finance-strategist"
+    "name": "20-Year Financial Strategist",
+    "keywords": "budget finance wealth strategist 20 year plan vanguard",
+    "info": "VERIFIED: Deterministic financial logic for building long-term wealth through 'Surge' and 'Breathing' monthly cycles.",
+    "link": "#"
+  },
+  {
+    "name": "Technical Writing Synergist",
+    "keywords": "documentation technical writing prd architect",
+    "info": "VERIFIED: Converts raw technical data into professional Project Requirement Documents (PRDs) and READMEs.",
+    "link": "#"
   }
 ]

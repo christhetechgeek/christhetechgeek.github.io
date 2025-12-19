@@ -1,49 +1,45 @@
 :root {
   --bg: #050505;
-  --panel: #111;
+  --panel: #0a0a0a;
   --accent: #00f2ff;
-  --glow: rgba(0, 242, 255, 0.5);
+  --glow: rgba(0, 242, 255, 0.4);
   --text: #e0e0e0;
-  --dim: #555;
+  --dim: #666;
 }
 
-body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; justify-content: center; min-height: 100vh; }
-.tech-shell { width: 95%; max-width: 800px; padding-bottom: 100px; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; justify-content: center; min-height: 100vh; overflow-x: hidden; }
+.tech-shell { width: 90%; max-width: 850px; padding-bottom: 80px; }
 
-.logo-morph { height: 180px; display: flex; justify-content: center; align-items: center; text-align: center; }
-.pillar-icon { font-size: 2.5rem; font-weight: 900; letter-spacing: 6px; text-transform: uppercase; color: #fff; }
-.accent { color: var(--accent); text-shadow: 0 0 15px var(--glow); }
+/* Cinematic Transitions */
+.logo-morph { height: 160px; display: flex; justify-content: center; align-items: center; transition: all 0.5s ease; }
+.pillar-icon { font-size: 2.2rem; font-weight: 900; letter-spacing: 8px; text-transform: uppercase; color: #fff; }
+.accent { color: var(--accent); text-shadow: 0 0 12px var(--glow); }
 
-.kingdom-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-.nav-btn { background: none; border: 1px solid var(--dim); color: var(--dim); padding: 8px 18px; font-size: 0.75rem; font-weight: 800; cursor: pointer; transition: 0.4s; letter-spacing: 1px; }
-.nav-btn.active, .nav-btn:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 10px var(--glow); }
+.kingdom-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+.nav-btn { background: none; border: 1px solid #222; color: var(--dim); padding: 10px 22px; font-size: 0.7rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 2px; }
+.nav-btn.active, .nav-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 242, 255, 0.05); }
 
-/* MANIFESTO & EXAMPLES */
-.manifesto { max-width: 600px; margin: 0 auto 20px auto; text-align: center; border: 1px solid #222; padding: 20px; background: #0a0a0a; }
-.manifesto h3 { font-size: 0.8rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 10px; }
-.manifesto p { font-size: 0.85rem; color: #888; line-height: 1.6; margin: 0; }
+/* Human-Centric Manifesto */
+.manifesto { max-width: 600px; margin: 0 auto 30px auto; text-align: center; border: 1px solid #1a1a1a; padding: 25px; background: var(--panel); border-radius: 2px; }
+.manifesto h3 { font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; margin-bottom: 12px; text-transform: uppercase; }
+.manifesto p { font-size: 0.85rem; color: #999; line-height: 1.7; margin: 0; }
 
-.example-cluster { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
-.example-tag { font-size: 0.65rem; color: var(--dim); border: 1px dashed #333; padding: 5px 10px; cursor: pointer; transition: 0.3s; }
-.example-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 242, 255, 0.05); }
+.example-cluster { display: flex; justify-content: center; gap: 12px; margin-bottom: 45px; flex-wrap: wrap; }
+.example-tag { font-size: 0.65rem; color: var(--dim); border: 1px solid #222; padding: 6px 14px; cursor: pointer; transition: 0.3s; background: #000; }
+.example-tag:hover { color: var(--accent); border-color: var(--accent); }
 
-.search-anchor { width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
-.search-section { width: 100%; max-width: 500px; }
-label { display: block; font-size: 0.7rem; letter-spacing: 2px; color: var(--dim); margin-bottom: 12px; font-weight: 800; text-align: center; }
-input { width: 100%; background: #000; color: #fff; border: 1px solid #333; padding: 18px; font-size: 1rem; outline: none; transition: 0.3s; text-align: center; }
-input:focus { border-color: var(--accent); box-shadow: 0 0 20px var(--glow); }
+/* Centered Search Engine */
+.search-anchor { width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 50px; }
+.search-section { width: 100%; max-width: 550px; }
+label { display: block; font-size: 0.65rem; letter-spacing: 3px; color: #444; margin-bottom: 15px; font-weight: 800; text-align: center; }
+input { width: 100%; background: #000; color: #fff; border: 1px solid #222; padding: 20px; font-size: 1rem; outline: none; transition: 0.4s; text-align: center; border-radius: 0; }
+input:focus { border-color: var(--accent); box-shadow: 0 0 25px rgba(0, 242, 255, 0.15); }
 
-#pillar-stage { transition: opacity 0.4s ease; }
-.results-hidden { display: none; }
-.glow-line { height: 1px; background: #333; margin: 40px 0; }
-
-#output-list { width: 100%; }
-.stage-hardware #output-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-
-.card { background: #0a0a0a; border: 1px solid #222; padding: 25px; margin-bottom: 15px; transition: 0.4s; }
-.card:hover { border-color: var(--accent); transform: translateY(-5px); }
-.card-title { color: var(--accent); font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 10px; }
-.card-desc { font-size: 0.9rem; line-height: 1.6; color: #bbb; }
-
-.action-btn { display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.7rem; font-weight: 800; border: 1px solid var(--accent); padding: 10px 20px; margin-top: 20px; transition: 0.3s; }
+/* Results Visuals */
+#output-list { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.card { background: #080808; border: 1px solid #1a1a1a; padding: 30px; transition: 0.4s; position: relative; }
+.card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.card-title { color: var(--accent); font-size: 0.8rem; font-weight: 800; display: block; margin-bottom: 12px; letter-spacing: 1px; }
+.card-desc { font-size: 0.85rem; line-height: 1.6; color: #aaa; margin-bottom: 25px; }
+.action-btn { display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.65rem; font-weight: 900; border: 1px solid var(--accent); padding: 12px 24px; transition: 0.3s; letter-spacing: 1.5px; }
 .action-btn:hover { background: var(--accent); color: #000; }

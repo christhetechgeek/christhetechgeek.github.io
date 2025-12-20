@@ -1,9 +1,8 @@
 [
   {
-    "name": "Automated Server Health Check Script",
-    "keywords": "forge automation script powershell bash health check dt1",
-    "info": "VERIFIED LOGIC: Idempotent script for checking thermal status and disk health across local nodes. Minimizes manual check-time by 90%.",
-    "photos": "",
+    "name": "Automated Environment Health Check Logic",
+    "keywords": "forge automation script powershell bash health check hardware logic deployment",
+    "info": "VERIFIED LOGIC: Idempotent script logic for checking thermal status and disk health across local nodes. Minimizes manual check-time by 90% through automated verification.",
     "link": "https://google.com/search?q=idempotent+server+health+check+scripts+bash"
   }
 ]

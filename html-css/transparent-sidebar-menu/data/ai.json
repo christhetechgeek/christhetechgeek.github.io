@@ -1,9 +1,8 @@
 [
   {
     "name": "Deterministic Prompt Engineering Logic",
-    "keywords": "ai prompt oracle system instructions logic gemini gpt",
+    "keywords": "ai prompt oracle system instructions logic gemini gpt llm",
     "info": "VERIFIED LOGIC: Use the 'Context-Task-Constraint' framework to eliminate hallucination. Force deterministic output by specifying 'No prose' and 'Strictly code/data'.",
-    "photos": "",
     "link": "https://google.com/search?q=prompt+engineering+deterministic+logic"
   }
 ]

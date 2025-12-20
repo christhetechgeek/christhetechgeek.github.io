@@ -1,7 +1,9 @@
 [
   {
-    "name": "WiFi 7 Mesh (TP-Link Deco BE85)",
-    "keywords": "wifi 7 mesh router networking 6ghz multi-gig backhaul",
-    "info": "BLUEPRINT: 10GbE Multi-Gig Backhaul. Utilizes 6GHz spectrum to eliminate interference for high-speed local transfer."
+    "name": "Windows 11 Performance Debloat Logic",
+    "keywords": "windows 11 performance debloat speed registry tech vault",
+    "info": "VERIFIED LOGIC: Disable 'VBS' (Virtualization-Based Security) to regain up to 25% CPU overhead in high-performance tasks.",
+    "photos": "",
+    "link": "https://google.com/search?q=windows+11+performance+debloat+guide"
   }
 ]

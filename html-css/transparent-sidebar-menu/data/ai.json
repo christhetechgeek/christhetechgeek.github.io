@@ -1,12 +1,9 @@
 [
   {
-    "name": "Human-Centric Logic Auditor",
-    "keywords": "prompt engineering logic audit code review empathy",
-    "info": "STREAMS: Professional prompt architecture designed to audit technical systems for human ease-of-use."
-  },
-  {
-    "name": "20-Year Financial Game Plan",
-    "keywords": "budget finance wealth strategist vanguard hysa plan",
-    "info": "STREAMS: Strategic financial logic for building long-term wealth through Surge ($4,000) and Breathing ($2,000) cycles."
+    "name": "Deterministic Prompt Logic: System Instructions",
+    "keywords": "ai prompt system instructions logic engineering oracle",
+    "info": "VERIFIED LOGIC: Use 'Act as a [Title]' followed by 'Context:', 'Task:', and 'Constraints:' to eliminate hallucination in LLMs.",
+    "photos": "",
+    "link": "https://google.com/search?q=prompt+engineering+best+practices"
   }
 ]

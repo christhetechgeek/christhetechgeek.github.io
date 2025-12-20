@@ -1,7 +1,9 @@
 [
   {
-    "name": "Cyberpunk 2077 (OLED Optimization)",
-    "keywords": "cyberpunk 2077 hdr settings raytracing oled golden",
-    "info": "SETTINGS: HDR10 PQ, Peak: 1000 nits, Paper White: 200. Enable DLSS Frame Gen and Ray Reconstruction for peak fidelity."
+    "name": "OLED Calibration: Black Level Stability",
+    "keywords": "oled calibration hdr black level gaming gaming arena lg sony",
+    "info": "VERIFIED LOGIC: Set 'Fine Tune Dark Areas' to -3 and 'Gamma' to 2.2 to stabilize black levels and eliminate VRR flicker.",
+    "photos": "",
+    "link": "https://google.com/search?q=OLED+calibration+settings+for+gaming"
   }
 ]

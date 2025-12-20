@@ -1,40 +1,12 @@
-:root {
-  --bg: #050505;
-  --panel: #0a0a0a;
-  --accent: #00f2ff;
-  --glow: rgba(0, 242, 255, 0.4);
-  --text: #e0e0e0;
-  --dim: #444;
-}
-
-body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; justify-content: center; min-height: 100vh; }
-.tech-shell { width: 90%; max-width: 900px; padding: 40px 0; }
-
-.logo-morph { height: 120px; display: flex; justify-content: center; align-items: center; transition: 0.5s; }
-.pillar-icon { font-size: 2rem; font-weight: 900; letter-spacing: 5px; text-transform: uppercase; color: #fff; }
-.accent { color: var(--accent); text-shadow: 0 0 10px var(--glow); }
-
-.kingdom-nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 50px; flex-wrap: wrap; }
-.nav-btn { background: none; border: 1px solid #222; color: var(--dim); padding: 12px 20px; font-size: 0.7rem; font-weight: 800; cursor: pointer; transition: 0.3s; letter-spacing: 1.5px; }
-.nav-btn.active, .nav-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 242, 255, 0.05); }
-
-.manifesto { text-align: center; margin-bottom: 40px; padding: 20px; background: var(--panel); border: 1px solid #1a1a1a; }
-.manifesto h3 { font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.manifesto p { font-size: 0.9rem; color: #888; margin: 0; line-height: 1.6; }
-
-.search-anchor { width: 100%; max-width: 500px; margin: 0 auto 50px auto; text-align: center; }
-label { display: block; font-size: 0.6rem; letter-spacing: 2px; color: #444; margin-bottom: 10px; font-weight: 900; }
-input { width: 100%; background: #000; color: #fff; border: 1px solid #222; padding: 18px; font-size: 1.1rem; outline: none; transition: 0.3s; text-align: center; }
-input:focus { border-color: var(--accent); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1); }
-
-#output-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.card { background: #080808; border: 1px solid #111; padding: 25px; transition: 0.4s; }
-.card:hover { border-color: var(--accent); }
-.card-title { color: var(--accent); font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 10px; }
-.card-desc { font-size: 0.85rem; color: #999; line-height: 1.5; margin-bottom: 20px; }
-.action-btn { display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.65rem; font-weight: 900; border: 1px solid var(--accent); padding: 10px 20px; transition: 0.3s; }
-.action-btn:hover { background: var(--accent); color: #000; }
-
-.kingdom-footer { margin-top: 100px; text-align: center; padding: 20px; }
-.glow-line { height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin-bottom: 20px; opacity: 0.3; }
-.kingdom-footer p { font-size: 0.7rem; color: #444; letter-spacing: 1px; }
+:root { --gold: #d4af37; --bg: #0a0a0a; --text: #f0f0f0; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; text-align: center; }
+.mission-bar { background: #1a1a1a; padding: 15px; border-radius: 8px; border-left: 4px solid var(--gold); margin-bottom: 30px; }
+nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.pillar-btn { background: transparent; color: var(--text); border: 1px solid #333; padding: 10px 20px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
+.pillar-btn.active { border-color: var(--gold); background: rgba(212, 175, 55, 0.1); }
+#globalSearch { width: 80%; max-width: 600px; padding: 15px; border-radius: 30px; border: 1px solid #333; background: #111; color: #fff; font-size: 18px; margin-bottom: 30px; outline: none; }
+.card { background: #151515; border: 1px solid #222; padding: 25px; border-radius: 12px; max-width: 600px; margin: 20px auto; text-align: left; transition: transform 0.2s; }
+.card-tag { display: inline-block; background: var(--gold); color: #000; font-size: 10px; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; }
+.card-title { display: block; font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+.action-btn { background: var(--gold); color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 6px; display: inline-block; }
+.action-btn-secondary { background: #333; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block; }

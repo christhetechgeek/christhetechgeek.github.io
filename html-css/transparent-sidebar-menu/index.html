@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kingdom | Systems Architecture</title>
+    <title>Kingdom of Technical Wealth</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="tech-shell">
-        <header id="pillar-logo-container" class="logo-morph">
-            <div id="pillar-logo"></div>
-        </header>
-
-        <nav class="kingdom-nav">
-            <button class="nav-btn active" onclick="ignitePillar('ai', event)">AI</button>
-            <button class="nav-btn" onclick="ignitePillar('hardware', event)">HARDWARE</button>
-            <button class="nav-btn" onclick="ignitePillar('gaming', event)">GAMING</button>
-            <button class="nav-btn" onclick="ignitePillar('tech', event)">TECH</button>
-            <button class="nav-btn" onclick="ignitePillar('dev', event)">DEV</button>
+    <header>
+        <h1>KINGDOM OF TECHNICAL WEALTH</h1>
+        <section class="mission-bar">
+            <h2>The Mission: Technical Wealth</h2>
+            <p>I am a Google DT1 applying Data Center precision to personal technology. This Kingdom provides **Verified Logic** to remove friction. Most insights here are free; surgical, high-stakes blueprints are available as professional assets.</p>
+        </section>
+        <nav id="pillar-nav">
+            <button class="pillar-btn active" onclick="setPillar('ai')">THE ORACLE</button>
+            <button class="pillar-btn" onclick="setPillar('gaming')">THE ARENA</button>
+            <button class="pillar-btn" onclick="setPillar('hardware')">THE ARMORY</button>
+            <button class="pillar-btn" onclick="setPillar('tech')">THE VAULT</button>
+            <button class="pillar-btn" onclick="setPillar('forge')">THE FORGE</button>
         </nav>
+    </header>
 
-        <main id="pillar-stage">
-            </main>
+    <main>
+        <div class="search-container">
+            <input type="text" id="globalSearch" placeholder="Search Verified Logic..." onkeyup="unifiedSearch()">
+        </div>
+        <div id="output-list"></div>
+    </main>
 
-        <footer class="kingdom-footer">
-            <div class="glow-line"></div>
-            <p>&copy; 2025-2026 Chris | Human-First Systems Architecture</p>
-        </footer>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>

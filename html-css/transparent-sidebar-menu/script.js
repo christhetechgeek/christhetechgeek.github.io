@@ -1,71 +1,90 @@
-const kingdomData = {
-    ai: { logo: "A.I. <span class='accent'>ORACLE</span>", desc: "Human-First AI Prompt Engineering.", label: "INITIALIZE LOGIC", placeholder: "Search objective..." },
-    hardware: { logo: "THE <span class='accent'>ARMORY</span>", desc: "Verified High-Performance Hardware.", label: "MAP COMPATIBILITY", placeholder: "Search device..." },
-    gaming: { logo: "THE <span class='accent'>ARENA</span>", desc: "Golden Settings for Peak Fidelity.", label: "CALIBRATE PERFORMANCE", placeholder: "Search titles..." },
-    tech: { logo: "TECH <span class='accent'>INFRA</span>", desc: "Infrastructure & Networking Blueprints.", label: "SYSTEM BLUEPRINT", placeholder: "Search network/power..." },
-    dev: { logo: "THE <span class='accent'>FORGE</span>", desc: "Clean-Room Code & Boilerplates.", label: "INJECT LOGIC", placeholder: "Search stack..." }
-};
+/**
+ * KINGDOM OF TECHNICAL WEALTH - CORE ENGINE v9.0
+ * ARCHITECT: Christopher Howard (DT1)
+ * MISSION: Direct Path / Filtered Authority / Zero Friction
+ */
 
-let activePillar = 'ai';
+let activePillar = 'ai'; // Default Pillar
 
-function ignitePillar(pillar, event) {
+/**
+ * Switch between the 5 Pillars of the Kingdom
+ * @param {string} pillar - ai, gaming, hardware, tech, forge
+ */
+function setPillar(pillar) {
     activePillar = pillar;
-    const stage = document.getElementById('pillar-stage');
-    const logo = document.getElementById('pillar-logo');
-    const config = kingdomData[pillar];
     
-    stage.style.opacity = 0;
-    setTimeout(() => {
-        logo.innerHTML = `<div class="pillar-icon">${config.logo}</div>`;
-        stage.innerHTML = `
-            <div class="manifesto"><h3>THE MISSION</h3><p>${config.desc}</p></div>
-            <div class="search-anchor">
-                <label>${config.label}</label>
-                <input type="text" id="globalSearch" placeholder="${config.placeholder}" onkeyup="unifiedSearch()">
-            </div>
-            <div id="results-container" class="results-hidden"><div id="output-list"></div></div>
-        `;
-        stage.style.opacity = 1;
-    }, 300);
-
-    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) event.target.classList.add('active');
+    // Update UI highlights
+    document.querySelectorAll('.pillar-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeBtn = document.querySelector(`.pillar-btn[onclick="setPillar('${pillar}')"]`);
+    if(activeBtn) activeBtn.classList.add('active');
+    
+    // Clear search and output for a fresh state
+    document.getElementById('globalSearch').value = "";
+    document.getElementById('output-list').innerHTML = "";
 }
 
+/**
+ * Execute Search with Filtered Authority Logic
+ */
 async function unifiedSearch() {
-    const input = document.getElementById('globalSearch');
-    const query = input.value.toLowerCase().trim();
+    const q = document.getElementById('globalSearch').value.toLowerCase().trim();
     const list = document.getElementById('output-list');
-    const container = document.getElementById('results-container');
-
-    if (query.length < 2) { container.classList.add('results-hidden'); return; }
-
+    
+    // Minimum 2 characters to trigger search
+    if (q.length < 2) { 
+        list.innerHTML = ""; 
+        return; 
+    }
+    
     try {
+        // Fetch the active JSON Vault
         const response = await fetch(`./data/${activePillar}.json`);
+        if (!response.ok) throw new Error("Vault Connection Failure");
+        
         const data = await response.json();
-        const matches = data.filter(item => 
-            item.name.toLowerCase().includes(query) || 
-            item.keywords.toLowerCase().includes(query)
+        
+        // Filter logic: Matches name or keywords
+        const matches = data.filter(i => 
+            i.name.toLowerCase().includes(q) || 
+            (i.keywords && i.keywords.toLowerCase().includes(q))
         );
 
-        container.classList.remove('results-hidden');
         if (matches.length > 0) {
-            list.innerHTML = matches.map(item => `
+            // DIRECT PATH: Found Verified Logic
+            list.innerHTML = matches.map(i => `
                 <div class="card">
-                    <span class="card-title">${item.name}</span>
-                    <p class="card-desc">${item.info}</p>
-                    <a href="${item.link}" class="action-btn" target="_blank">ACQUIRE LOGIC</a>
+                    <span class="card-tag">VERIFIED LOGIC</span>
+                    <span class="card-title">${i.name}</span>
+                    <p class="card-desc">${i.info}</p>
+                    
+                    <div class="action-cluster" style="margin-top: 15px; display: flex; gap: 10px;">
+                        ${(i.photos && i.photos !== "") ? 
+                            `<a href="${i.photos}" target="_blank" class="action-btn-secondary">PREVIEW PROOF</a>` : ''}
+                        
+                        <a href="${i.link}" target="_blank" class="action-btn">ACQUIRE DIRECT PATH</a>
+                    </div>
                 </div>
             `).join('');
         } else {
+            // SYSTEM OVERRIDE: Curated Fallback
             list.innerHTML = `
-                <div class="card" style="border-style: dashed; cursor: pointer; grid-column: 1/-1;" onclick="window.open('https://google.com/search?q=${query}')">
-                    <span class="card-title">SEARCH GLOBAL LIBRARY</span>
-                    <p class="card-desc">No local entries for "${query}". Click to search the global technical web.</p>
+                <div class="card card-fallback" onclick="window.open('https://google.com/search?q=${q}', '_blank')">
+                    <span class="card-tag" style="background: #444;">SYSTEM OVERRIDE</span>
+                    <span class="card-title">NO LOCAL LOGIC FOUND</span>
+                    <p class="card-desc">The Kingdom does not yet have a verified blueprint for "${q}". Use System Override to search the global web via Google's engine.</p>
+                    <div class="action-btn" style="background: transparent; border: 1px solid #fff;">EXECUTE GLOBAL SEARCH</div>
                 </div>
             `;
         }
-    } catch (e) { console.error("Vault Connection Error."); }
+    } catch (err) {
+        console.error("Critical Engine Error:", err);
+        list.innerHTML = `<div class="card-error">CRITICAL: VAULT OFFLINE. CHECK DATA SOURCE.</div>`;
+    }
 }
 
-window.onload = () => ignitePillar('ai');
+// Ensure the first pillar is active on load
+window.onload = () => {
+    setPillar('ai');
+};

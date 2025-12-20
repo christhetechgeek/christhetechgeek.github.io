@@ -2,19 +2,11 @@
   {
     "name": "Human-Centric Logic Auditor",
     "keywords": "prompt engineering logic audit code review empathy",
-    "info": "VERIFIED: A prompt architecture designed to audit technical systems for human ease-of-use and empathetic UX flow.",
-    "link": "#"
+    "info": "STREAMS: Professional prompt architecture designed to audit technical systems for human ease-of-use."
   },
   {
-    "name": "20-Year Financial Strategist",
-    "keywords": "budget finance wealth strategist 20 year plan vanguard",
-    "info": "VERIFIED: Deterministic financial logic for building long-term wealth through 'Surge' and 'Breathing' monthly cycles.",
-    "link": "#"
-  },
-  {
-    "name": "Technical Writing Synergist",
-    "keywords": "documentation technical writing prd architect",
-    "info": "VERIFIED: Converts raw technical data into professional Project Requirement Documents (PRDs) and READMEs.",
-    "link": "#"
+    "name": "20-Year Financial Game Plan",
+    "keywords": "budget finance wealth strategist vanguard hysa plan",
+    "info": "STREAMS: Strategic financial logic for building long-term wealth through Surge ($4,000) and Breathing ($2,000) cycles."
   }
 ]

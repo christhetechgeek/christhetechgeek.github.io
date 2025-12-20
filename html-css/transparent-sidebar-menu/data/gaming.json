@@ -1,20 +1,7 @@
 [
   {
     "name": "Cyberpunk 2077 (OLED Optimization)",
-    "keywords": "cyberpunk 2077 hdr settings raytracing oled",
-    "info": "SETTINGS: HDR10 PQ, Peak: 1000 nits, Paper White: 200. Enable DLSS Frame Gen and Ray Reconstruction for peak visual fidelity.",
-    "link": "#"
-  },
-  {
-    "name": "Windows HDR Global Calibration",
-    "keywords": "windows 11 hdr calibration monitor peak brightness",
-    "info": "LOGIC: Use Windows HDR Calibration App. Set Min Luminance: 0. Max Luminance: 1000. Saturation: 100.",
-    "link": "#"
-  },
-  {
-    "name": "The Outer Worlds 2 (Performance Forecast)",
-    "keywords": "outer worlds 2 rpg performance settings 2026",
-    "info": "LOGIC: 2026 Ready. Targets Unreal Engine 5 optimization. Verified focus on Lumen and Nanite hardware acceleration.",
-    "link": "#"
+    "keywords": "cyberpunk 2077 hdr settings raytracing oled golden",
+    "info": "SETTINGS: HDR10 PQ, Peak: 1000 nits, Paper White: 200. Enable DLSS Frame Gen and Ray Reconstruction for peak fidelity."
   }
 ]

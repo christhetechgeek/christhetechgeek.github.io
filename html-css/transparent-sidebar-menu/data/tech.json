@@ -1,20 +1,7 @@
 [
   {
     "name": "WiFi 7 Mesh (TP-Link Deco BE85)",
-    "keywords": "wifi 7 mesh router networking 6ghz multi-gig",
-    "info": "BLUEPRINT: 10GbE Multi-Gig Backhaul. Utilizes the 6GHz spectrum to eliminate interference for high-speed local data transfer.",
-    "link": "https://amzn.to/example"
-  },
-  {
-    "name": "GaN Charging Ecosystem (Anker 747)",
-    "keywords": "gan charger usb-c power delivery pd 150w",
-    "info": "BLUEPRINT: 150W GaN technology. Capable of powering a high-performance laptop and three mobile devices simultaneously.",
-    "link": "https://amzn.to/example"
-  },
-  {
-    "name": "Matter Smart Lighting Infrastructure",
-    "keywords": "matter smart home lighting hue thread zigbee",
-    "info": "BLUEPRINT: Local-first automation using Thread and Matter protocols. Prevents cloud-dependency for critical smart home logic.",
-    "link": "https://amzn.to/example"
+    "keywords": "wifi 7 mesh router networking 6ghz multi-gig backhaul",
+    "info": "BLUEPRINT: 10GbE Multi-Gig Backhaul. Utilizes 6GHz spectrum to eliminate interference for high-speed local transfer."
   }
 ]

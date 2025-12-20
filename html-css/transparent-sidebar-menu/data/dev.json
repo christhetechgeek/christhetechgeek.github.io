@@ -1,26 +1,7 @@
 [
   {
-    "name": "React + Tailwind: Obsidian Synergy Starter",
-    "keywords": "react tailwind framework frontend boilerplate obsidian cyan",
-    "info": "STREAMS: Vite/React/Tailwind. Includes pre-configured dark-mode variables and the 'Kingdom' layout shell for rapid deployment.",
-    "link": "https://github.com/christhetechgeek/obsidian-starter"
-  },
-  {
-    "name": "Python: Deterministic Data Auditor",
-    "keywords": "python script automation data audit logic json validator",
-    "info": "STREAMS: Python 3.12. A clean-room script for auditing local JSON files against schema standards to prevent 'Librarian' errors.",
-    "link": "https://github.com/christhetechgeek/python-auditor"
-  },
-  {
-    "name": "Node.js: Express API Infrastructure",
-    "keywords": "node express api backend infrastructure boilerplate",
-    "info": "STREAMS: Node/Express. Professional-grade folder architecture with localized environment variable protection and error-handling middleware.",
-    "link": "https://github.com/christhetechgeek/node-api-infra"
-  },
-  {
-    "name": "PowerShell: Systems Optimization Logic",
-    "keywords": "powershell automation windows gaming optimization script",
-    "info": "STREAMS: PowerShell Core. Automates Windows debloating, HDR calibration toggles, and high-performance power plan injection.",
-    "link": "https://github.com/christhetechgeek/sys-optimizer"
+    "name": "React + Tailwind Obsidian Starter",
+    "keywords": "react tailwind boilerplate obsidian cyan vite boilerplate",
+    "info": "CODE: High-integrity shell for rapid project deployment. Pre-configured with Obsidian Synergy variables."
   }
 ]

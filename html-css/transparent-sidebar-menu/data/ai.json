@@ -1,9 +1,9 @@
 [
   {
-    "name": "Deterministic Prompt Logic: System Instructions",
-    "keywords": "ai prompt system instructions logic engineering oracle",
-    "info": "VERIFIED LOGIC: Use 'Act as a [Title]' followed by 'Context:', 'Task:', and 'Constraints:' to eliminate hallucination in LLMs.",
+    "name": "Deterministic Prompt Engineering Logic",
+    "keywords": "ai prompt oracle system instructions logic gemini gpt",
+    "info": "VERIFIED LOGIC: Use the 'Context-Task-Constraint' framework to eliminate hallucination. Force deterministic output by specifying 'No prose' and 'Strictly code/data'.",
     "photos": "",
-    "link": "https://google.com/search?q=prompt+engineering+best+practices"
+    "link": "https://google.com/search?q=prompt+engineering+deterministic+logic"
   }
 ]

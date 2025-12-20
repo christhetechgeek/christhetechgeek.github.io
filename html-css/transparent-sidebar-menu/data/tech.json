@@ -1,9 +1,9 @@
 [
   {
-    "name": "Windows 11 Performance Debloat Logic",
-    "keywords": "windows 11 performance debloat speed registry tech vault",
-    "info": "VERIFIED LOGIC: Disable 'VBS' (Virtualization-Based Security) to regain up to 25% CPU overhead in high-performance tasks.",
+    "name": "Windows 11 VBS & Core Isolation Bypass",
+    "keywords": "windows 11 performance vault vbs core isolation bypass speed tech",
+    "info": "VERIFIED LOGIC: Disabling VBS (Virtualization-Based Security) recovers up to 15% of frame-time consistency. Essential for high-performance DT1 workstations.",
     "photos": "",
-    "link": "https://google.com/search?q=windows+11+performance+debloat+guide"
+    "link": "https://google.com/search?q=how+to+disable+VBS+windows+11+performance"
   }
 ]

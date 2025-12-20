@@ -1,9 +1,9 @@
 [
   {
-    "name": "Automated Deployment: Script Template",
-    "keywords": "automation script forge deployment dt1 logic",
-    "info": "VERIFIED LOGIC: Use idempotent shell scripts for environment setup to ensure system state consistency across deployments.",
+    "name": "Automated Server Health Check Script",
+    "keywords": "forge automation script powershell bash health check dt1",
+    "info": "VERIFIED LOGIC: Idempotent script for checking thermal status and disk health across local nodes. Minimizes manual check-time by 90%.",
     "photos": "",
-    "link": "https://google.com/search?q=idempotent+shell+scripts+best+practices"
+    "link": "https://google.com/search?q=idempotent+server+health+check+scripts+bash"
   }
 ]

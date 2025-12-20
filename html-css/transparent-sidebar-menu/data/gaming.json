@@ -1,9 +1,9 @@
 [
   {
-    "name": "OLED Calibration: Black Level Stability",
-    "keywords": "oled calibration hdr black level gaming gaming arena lg sony",
-    "info": "VERIFIED LOGIC: Set 'Fine Tune Dark Areas' to -3 and 'Gamma' to 2.2 to stabilize black levels and eliminate VRR flicker.",
+    "name": "LG OLED / QD-OLED HDR Calibration",
+    "keywords": "oled gaming arena hdr calibration black level lg sony alienware",
+    "info": "VERIFIED LOGIC: Set 'Black Level' to 50, 'Gamma' to 2.2, and disable all 'Energy Saving' features to prevent ABL (Auto Brightness Limiting) during high-intensity gaming.",
     "photos": "",
-    "link": "https://google.com/search?q=OLED+calibration+settings+for+gaming"
+    "link": "https://google.com/search?q=OLED+HDR+calibration+for+gaming+best+practices"
   }
 ]

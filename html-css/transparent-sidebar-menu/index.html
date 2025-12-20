@@ -5,26 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdom of Technical Wealth</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
 </head>
 <body>
+    <div id="stars"></div>
     <header>
-        <h1>KINGDOM OF TECHNICAL WEALTH</h1>
+        <div class="logo-area">
+            <svg class="main-logo" viewBox="0 0 100 100">
+                <path d="M20,80 L50,20 L80,80 L50,65 Z" fill="none" stroke="#d4af37" stroke-width="2"/>
+                <circle cx="50" cy="45" r="5" fill="#d4af37"/>
+            </svg>
+            <h1>KINGDOM OF TECHNICAL WEALTH</h1>
+        </div>
+        
+        <button class="help-btn" onclick="toggleHelp()">[ OPERATIONAL MANUAL ]</button>
+        
         <section class="mission-bar">
             <h2>The Mission: Technical Wealth</h2>
-            <p>I am a Google DT1 applying Data Center precision to personal technology. This Kingdom provides **Verified Logic** to remove friction. Most insights here are free; surgical, high-stakes blueprints are available as professional assets.</p>
+            <p>Google DT1 Standard: Applying Data Center precision to the personal digital experience. We remove the "grunt work" through verified, surgical logic.</p>
         </section>
+
         <nav id="pillar-nav">
-            <button class="pillar-btn active" onclick="setPillar('ai')">THE ORACLE</button>
-            <button class="pillar-btn" onclick="setPillar('gaming')">THE ARENA</button>
-            <button class="pillar-btn" onclick="setPillar('hardware')">THE ARMORY</button>
-            <button class="pillar-btn" onclick="setPillar('tech')">THE VAULT</button>
-            <button class="pillar-btn" onclick="setPillar('forge')">THE FORGE</button>
+            <button class="pillar-btn active" onclick="setPillar('ai')">
+                <span class="p-icon">👁️</span> THE ORACLE
+            </button>
+            <button class="pillar-btn" onclick="setPillar('gaming')">
+                <span class="p-icon">🎮</span> THE ARENA
+            </button>
+            <button class="pillar-btn" onclick="setPillar('hardware')">
+                <span class="p-icon">🛠️</span> THE ARMORY
+            </button>
+            <button class="pillar-btn" onclick="setPillar('tech')">
+                <span class="p-icon">💾</span> THE VAULT
+            </button>
+            <button class="pillar-btn" onclick="setPillar('forge')">
+                <span class="p-icon">🔥</span> THE FORGE
+            </button>
         </nav>
     </header>
 
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleHelp()">&times;</span>
+            <h2 style="color:var(--gold)">Operational Manual</h2>
+            <p>Welcome, Christopher. This Kingdom is organized into five high-authority pillars:</p>
+            <ul>
+                <li><strong>The Oracle:</strong> Deterministic AI prompt engineering.</li>
+                <li><strong>The Arena:</strong> Breathtaking gaming/display optimization.</li>
+                <li><strong>The Armory:</strong> Surgical hardware blueprints (Alienware 18).</li>
+                <li><strong>The Vault:</strong> System debloating and efficiency logic.</li>
+                <li><strong>The Forge:</strong> Automation and deployment scripts.</li>
+            </ul>
+            <p><em>Search keywords to acquire the "Direct Path" to verified solutions.</em></p>
+        </div>
+    </div>
+
     <main>
-        <div class="search-container">
-            <input type="text" id="globalSearch" placeholder="Search Verified Logic..." onkeyup="unifiedSearch()">
+        <div class="search-wrapper">
+            <input type="text" id="globalSearch" placeholder="Execute Search for Verified Logic..." onkeyup="unifiedSearch()">
+            <div id="search-glow"></div>
         </div>
         <div id="output-list"></div>
     </main>

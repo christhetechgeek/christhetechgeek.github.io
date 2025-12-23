@@ -1,8 +1,10 @@
 [
   {
     "name": "Automated Environment Health Check Logic",
+    "tier": "Automation // Free",
     "keywords": "forge automation script powershell bash health check hardware logic deployment",
-    "info": "VERIFIED LOGIC: Idempotent script logic for checking thermal status and disk health across local nodes. Minimizes manual check-time by 90% through automated verification.",
-    "link": "https://google.com/search?q=idempotent+server+health+check+scripts+bash"
+    "info": "SURGICAL LOGIC: Idempotent script logic for hardware telemetry. Automates thermal status and disk health audits across local nodes.",
+    "link": "https://google.com/search?q=idempotent+server+health+check+scripts+bash",
+    "cta": "Forge Tool"
   }
 ]

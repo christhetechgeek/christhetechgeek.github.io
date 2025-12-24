@@ -1,10 +1,29 @@
 [
   {
-    "name": "Alienware 18 (2025) - 24TB Surgical Blueprint",
-    "tier": "Blueprint // License",
-    "keywords": "alienware 18 2025 24tb ssd upgrade rtx 5090 hardware armory heatsink surgical blueprint architecture",
-    "info": "SURGICAL BLUEPRINT: The definitive 4-Phase architecture for 24TB NVMe expansion. Includes BIOS Service Mode protocols and OEM thermal specifications.",
-    "link": "https://8069046649963.gumroad.com/l/njcfb",
-    "cta": "Acquire Blueprint"
+    "name": "PSU Wattage Estimator",
+    "size": "Small",
+    "tier": "POWER LOGIC",
+    "info": "A surgical calculator to estimate total system power draw (TDP) and recommend optimal Power Supply Unit (PSU) overhead for peak efficiency.",
+    "keywords": "power psu wattage tdp electric armory hardware",
+    "link": "tools/armory/wattage-calc.html",
+    "cta": "Calculate Draw"
+  },
+  {
+    "name": "Thermal Throttling Diagnostic",
+    "size": "Medium",
+    "tier": "THERMAL LOGIC",
+    "info": "Analyzes temperature delta and clock speeds to identify if hardware performance is being capped by heat dissipation limits.",
+    "keywords": "thermal heat throttling cpu gpu temperature armory",
+    "link": "tools/armory/thermal-diag.html",
+    "cta": "Analyze Heat"
+  },
+  {
+    "name": "Build-a-Rig Compatibility Engine",
+    "size": "Large",
+    "tier": "ARCHITECTURAL",
+    "info": "A high-fidelity compatibility checker for PC builds, verifying socket types, RAM clearances, and case dimensions.",
+    "keywords": "pc build compatibility hardware armory rig architecture",
+    "link": "tools/armory/rig-engine.html",
+    "cta": "Initialize Build"
   }
 ]

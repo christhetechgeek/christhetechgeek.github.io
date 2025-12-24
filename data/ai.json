@@ -1,10 +1,29 @@
 [
   {
-    "name": "Deterministic Prompt Engineering Logic",
-    "tier": "Logic Vault // Free",
-    "keywords": "ai prompt oracle system instructions logic gemini gpt llm",
-    "info": "SURGICAL LOGIC: Implementation of the 'Context-Task-Constraint' framework to eliminate LLM hallucination. Force deterministic output by specifying strict structural parameters.",
-    "link": "https://google.com/search?q=prompt+engineering+deterministic+logic",
-    "cta": "Acquire Path"
+    "name": "Prompt Surgical Optimizer",
+    "size": "Small",
+    "tier": "STABLE LOGIC",
+    "info": "A high-precision utility designed to strip conversational fluff and inject surgical constraints into LLM prompts for maximum output accuracy.",
+    "keywords": "ai prompt engineering llm logic optimization surgical",
+    "link": "tools/oracle/prompt-optimizer.html",
+    "cta": "Open Utility"
+  },
+  {
+    "name": "Context Density Calculator",
+    "size": "Medium",
+    "tier": "INFRASTRUCTURE",
+    "info": "Analyze codebases or technical documents to calculate token density and context window saturation for GPT-4o, Claude 3.5, and Gemini 1.5.",
+    "keywords": "tokens context window calculator ai models density",
+    "link": "tools/oracle/context-calc.html",
+    "cta": "Initialize Data"
+  },
+  {
+    "name": "Agentic Workflow Designer",
+    "size": "Large",
+    "tier": "AX ARCHITECTURE",
+    "info": "Design and map complex Agentic Experience (AX) workflows, establishing triggers, logic gates, and mission-critical Human-in-the-Loop validation points.",
+    "keywords": "agentic ax workflow ai design architecture orchestration",
+    "link": "tools/oracle/ax-architect.html",
+    "cta": "Launch Forge"
   }
 ]

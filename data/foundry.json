@@ -1,26 +1,29 @@
 [
   {
-    "name": "The AX Optimizer (Lite)",
-    "tier": "Individual // Free",
-    "keywords": "ax optimizer prompt audit software tool individual surgical utility",
-    "info": "SURGICAL UTILITY: An automated local audit tool designed to analyze prompt patterns and provide a 'Deterministic Accuracy' score for LLM interactions. Engineered to improve precision and reduce hallucination by 40%.",
-    "link": "#",
-    "cta": "Forge Tool (Free)"
+    "name": "UX Color Contrast Validator",
+    "size": "Small",
+    "tier": "ACCESSIBILITY",
+    "info": "A surgical tool to verify WCAG color contrast ratios, ensuring your UI logic is accessible to all human visual spectrums.",
+    "keywords": "ux design accessibility contrast foundry",
+    "link": "tools/foundry/contrast-val.html",
+    "cta": "Validate Ratios"
   },
   {
-    "name": "Fleet Health Auditor (v1.0)",
-    "tier": "Small Business // Pay-per-Use",
-    "keywords": "fleet auditor local machines health scan small business tool license surgical utility",
-    "info": "SURGICAL UTILITY: Advanced hardware telemetry orchestrator. Scans up to 50 local nodes to generate a comprehensive 'Surgical Health Blueprint' PDF, identifying thermal friction and disk failures prior to critical impact.",
-    "link": "https://gumroad.com",
-    "cta": "Acquire License"
+    "name": "AX Experience Audit Tool",
+    "size": "Medium",
+    "tier": "AGENTIC LOGIC",
+    "info": "Audits the friction between AI agents and human users to ensure 'Human-in-the-Loop' parity and transparency.",
+    "keywords": "ax agentic experience ux design audit foundry",
+    "link": "tools/foundry/ax-audit.html",
+    "cta": "Audit Experience"
   },
   {
-    "name": "Nexus Agent Orchestrator",
-    "tier": "Enterprise // Subscription",
-    "keywords": "nexus agent enterprise orchestrator ax human in the loop tool infrastructure surgical utility",
-    "info": "SURGICAL UTILITY: A high-availability background service maintaining 'Human-in-the-Loop' protocols for automated infrastructure tasks. Features real-time telemetry and Agentic Experience (AX) orchestration for mission-critical data centers.",
-    "link": "https://gumroad.com",
-    "cta": "Join the Fleet"
+    "name": "Human-First Process Architect",
+    "size": "Large",
+    "tier": "ARCHITECTURAL",
+    "info": "A high-fidelity designer for mapping end-to-end user journeys that prioritize human agency over automated convenience.",
+    "keywords": "ux journey map human first architect foundry design",
+    "link": "tools/foundry/journey-architect.html",
+    "cta": "Map Journey"
   }
 ]

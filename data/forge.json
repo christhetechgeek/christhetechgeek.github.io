@@ -1,0 +1,29 @@
+[
+  {
+    "name": "CSS Filter Generator",
+    "size": "Small",
+    "tier": "STYLING LOGIC",
+    "info": "A high-precision tool to generate complex CSS filters (blur, saturate, hue-rotate) with real-time visual logic validation.",
+    "keywords": "css filter styles forge frontend development web",
+    "link": "tools/forge/filter-gen.html",
+    "cta": "Generate Filter"
+  },
+  {
+    "name": "Regex Pattern Tester",
+    "size": "Medium",
+    "tier": "PARSING LOGIC",
+    "info": "A mission-critical utility for testing Regular Expression (Regex) patterns against complex datasets with surgical error reporting.",
+    "keywords": "regex parsing code forge developer strings",
+    "link": "tools/forge/regex-tester.html",
+    "cta": "Test Pattern"
+  },
+  {
+    "name": "Full-Stack Boilerplate Forge",
+    "size": "Large",
+    "tier": "ARCHITECTURAL",
+    "info": "A high-fidelity generator that creates clean, Human-First project structures for various programming environments.",
+    "keywords": "boilerplate architecture code forge project structure",
+    "link": "tools/forge/boilerplate-forge.html",
+    "cta": "Forge Project"
+  }
+]

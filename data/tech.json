@@ -1,10 +1,29 @@
 [
   {
-    "name": "Infrastructure Standard: OS Performance Logic",
-    "tier": "Logic Vault // Free",
-    "keywords": "windows 11 performance vault vbs core isolation bypass speed tech debloat",
-    "info": "SURGICAL LOGIC: VBS (Virtualization-Based Security) bypass for high-performance workstations. Reclaims up to 15% of frame-time consistency.",
-    "link": "https://google.com/search?q=how+to+disable+VBS+windows+11+performance",
-    "cta": "Execute Path"
+    "name": "IP Subnet Calculator",
+    "size": "Small",
+    "tier": "NETWORK LOGIC",
+    "info": "A precision tool for calculating CIDR notation, subnet masks, and usable host ranges for enterprise network architecture.",
+    "keywords": "ip subnet mask cidr networking vault tech infrastructure",
+    "link": "tools/vault/subnet-calc.html",
+    "cta": "Calculate Range"
+  },
+  {
+    "name": "Port Security Checklist",
+    "size": "Medium",
+    "tier": "SECURITY LOGIC",
+    "info": "A mission-critical audit tool for verifying open ports and mapping them against standard security protocols to prevent unauthorized ingress.",
+    "keywords": "port security firewall audit vault networking tech",
+    "link": "tools/vault/port-audit.html",
+    "cta": "Audit Ports"
+  },
+  {
+    "name": "Network Topology Mapper",
+    "size": "Large",
+    "tier": "ARCHITECTURAL",
+    "info": "A high-fidelity visual designer for mapping large-scale network infrastructure, including edge routers, switches, and endpoint clusters.",
+    "keywords": "network topology map architecture vault tech infrastructure",
+    "link": "tools/vault/topology-mapper.html",
+    "cta": "Design Network"
   }
 ]

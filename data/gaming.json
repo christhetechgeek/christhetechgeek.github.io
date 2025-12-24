@@ -1,10 +1,29 @@
 [
   {
-    "name": "High-Performance Display Calibration (OLED)",
-    "tier": "Calibration // Free",
-    "keywords": "oled gaming arena hdr calibration black level lg sony alienware qd-oled",
-    "info": "SURGICAL LOGIC: Optimized parameters for infinite contrast. Disable all 'Energy Saving' telemetry to prevent ABL (Auto Brightness Limiting).",
-    "link": "https://google.com/search?q=OLED+HDR+calibration+for+gaming+best+practices",
-    "cta": "View Logic"
+    "name": "Frame-Time Stability Checker",
+    "size": "Small",
+    "tier": "PERFORMANCE",
+    "info": "A lightweight logic tool to identify micro-stuttering causes by analyzing frame-time variance against refresh rate cycles.",
+    "keywords": "fps stutter frame time gaming lag performance",
+    "link": "tools/arena/frame-stabilizer.html",
+    "cta": "Analyze Frames"
+  },
+  {
+    "name": "Competitive Sensitivity Mapper",
+    "size": "Medium",
+    "tier": "PRECISION",
+    "info": "A cross-engine sensitivity converter that calculates pixel-perfect mouse movement parity between different game engines (Unreal, Source).",
+    "keywords": "dpi sensitivity aim mouse converter arena",
+    "link": "tools/arena/sens-mapper.html",
+    "cta": "Parity Sync"
+  },
+  {
+    "name": "Hardware Bottleneck Simulation",
+    "size": "Large",
+    "tier": "INFRASTRUCTURE",
+    "info": "A high-fidelity simulator that predicts CPU/GPU bottlenecks based on specific architectural pairings and resolution scaling.",
+    "keywords": "bottleneck cpu gpu hardware gaming performance simulator",
+    "link": "tools/arena/bottleneck-sim.html",
+    "cta": "Launch Simulation"
   }
 ]

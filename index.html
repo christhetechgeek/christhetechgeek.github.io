@@ -1,33 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Kingdom of Technical Wealth | ChrisTheTechGeek</title>
+    <style>
+        :root {
+            --bg: #030303;
+            --card-bg: #0a0a0a;
+            --text: #ffffff;
+            --sub-text: #777;
+            --pillar-color: #d4af37;
+            --pillar-glow: rgba(212, 175, 55, 0.3);
+        }
+
+        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; overflow-x: hidden;
+        }
+
+        .telemetry-bar {
+            width: 100%; background: #000; border-bottom: 1px solid #111;
+            padding: 8px 20px; display: flex; justify-content: space-around;
+            font-size: 0.7rem; font-family: monospace; color: var(--sub-text);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        header { width: 100%; padding: 40px 20px; text-align: center; }
+        h1 { 
+            font-size: 2.2rem; letter-spacing: 8px; color: var(--pillar-color); 
+            text-transform: uppercase; font-weight: 900; 
+            text-shadow: 0 0 20px var(--pillar-glow);
+        }
+
+        .mission-bar {
+            max-width: 800px; margin: 25px auto; padding: 25px;
+            background: #0d0d0d; border-left: 4px solid var(--pillar-color);
+            border-radius: 8px; text-align: left; font-size: 0.95rem; line-height: 1.7;
+        }
+
+        nav { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
+        
+        .pillar-btn {
+            background: #111; border: 1px solid #222; color: #555;
+            padding: 12px 20px; border-radius: 12px; cursor: pointer;
+            font-weight: bold; font-size: 0.75rem; text-transform: uppercase;
+            animation: breathe 3s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0%, 100% { border-color: #222; box-shadow: 0 0 0 rgba(0,0,0,0); }
+            50% { border-color: var(--p-color); box-shadow: 0 0 10px var(--p-glow); }
+        }
+
+        .p-ai { --p-color: #00f2ff; --p-glow: rgba(0, 242, 255, 0.4); }
+        .p-gaming { --p-color: #ff00ff; --p-glow: rgba(255, 0, 255, 0.4); }
+        .p-hardware { --p-color: #d4af37; --p-glow: rgba(212, 175, 55, 0.4); }
+        .p-tech { --p-color: #00ff88; --p-glow: rgba(0, 255, 136, 0.4); }
+        .p-forge { --p-color: #ff4444; --p-glow: rgba(255, 68, 68, 0.4); }
+        .p-foundry { --p-color: #6a0dad; --p-glow: rgba(106, 13, 173, 0.6); }
+
+        .pillar-btn.active { color: #fff; border-color: var(--p-color); background: rgba(255,255,255,0.05); box-shadow: 0 0 20px var(--p-glow); animation: none; }
+
+        .credentials-zone { width: 100%; max-width: 700px; margin: 0 auto 30px auto; display: flex; flex-direction: column; gap: 12px; }
+        details { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 12px; overflow: hidden; animation: breathe 4s infinite ease-in-out; }
+        details[open] { border-color: var(--pillar-color); box-shadow: 0 0 25px var(--pillar-glow); background: #111; animation: none; }
+        summary { padding: 18px 25px; cursor: pointer; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; color: var(--pillar-color); display: flex; justify-content: space-between; align-items: center; outline: none; letter-spacing: 1px; }
+        summary::-webkit-details-marker { display: none; }
+        .arrow { transition: transform 0.4s ease; font-size: 0.7rem; color: #444; }
+        details[open] .arrow { transform: rotate(180deg); color: var(--pillar-color); }
+        .cert-details { padding: 25px; border-top: 1px solid #1a1a1a; color: #ccc; line-height: 1.7; font-size: 0.95rem; }
+        .validated-tag { display: block; color: var(--pillar-color); font-weight: 900; font-size: 0.65rem; margin-bottom: 12px; letter-spacing: 2px; }
+
+        .search-zone { width: 100%; max-width: 700px; padding: 0 20px; margin-bottom: 40px; }
+        #globalSearch {
+            width: 100%; padding: 20px 35px; background: #000; 
+            border: 2px solid var(--pillar-color); border-radius: 60px; 
+            color: #fff; font-size: 1.2rem; outline: none;
+            box-shadow: 0 0 30px var(--pillar-glow); text-align: center;
+        }
+
+        #output-list { width: 100%; max-width: 750px; padding: 0 20px; padding-bottom: 100px;}
+        .card { background: var(--card-bg); border: 1px solid #1a1a1a; border-radius: 20px; padding: 30px; margin-bottom: 25px; text-align: left; border-left: 5px solid var(--pillar-color); }
+        .tier-badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; background: rgba(255,255,255,0.1); color: var(--pillar-color); }
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        <a href="/christhetechgeek/kingdom/index.html">
-            <button style="font-size:50px; background-color:white; color:black; border-radius:50px;" type="button" class="btn">Welcome</button>
-            </a>
 
+    <div class="telemetry-bar">
+        <div id="status">INFRASTRUCTURE: ONLINE</div>
+        <div id="developer">DEVELOPER: ChrisTheTechGeek</div>
+        <div id="logic">TRINITY_VALIDATION: ACTIVE</div>
     </div>
 
-    <div class="loading-page">
-        <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 16c-6.7 0-10.8-2.8-15.5-6.1C201.9 5.4 194 0 176 0c-30.5 0-52 43.7-66 89.4C62.7 98.1 32 112.2 32 128c0 14.3 25 27.1 64.6 35.9c-.4 4-.6 8-.6 12.1c0 17 3.3 33.2 9.3 48H45.4C38 224 32 230 32 237.4c0 1.7 .3 3.4 1 5l38.8 96.9C28.2 371.8 0 423.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7c0-58.5-28.2-110.4-71.7-143L415 242.4c.6-1.6 1-3.3 1-5c0-7.4-6-13.4-13.4-13.4H342.7c6-14.8 9.3-31 9.3-48c0-4.1-.2-8.1-.6-12.1C391 155.1 416 142.3 416 128c0-15.8-30.7-29.9-78-38.6C324 43.7 302.5 0 272 0c-18 0-25.9 5.4-32.5 9.9c-4.8 3.3-8.8 6.1-15.5 6.1zm56 208H267.6c-16.5 0-31.1-10.6-36.3-26.2c-2.3-7-12.2-7-14.5 0c-5.2 15.6-19.9 26.2-36.3 26.2H168c-22.1 0-40-17.9-40-40V169.6c28.2 4.1 61 6.4 96 6.4s67.8-2.3 96-6.4V184c0 22.1-17.9 40-40 40zm-88 96l16 32L176 480 128 288l64 32zm128-32L272 480 240 352l16-32 64-32z"/></svg>
-
-        <div class="name-container">
-            <div class="logo-name">Chris, The Tech Geek</div>
+    <header>
+        <h1>Kingdom of Technical Wealth</h1>
+        <div class="mission-bar">
+            <strong>THE MISSION:</strong> Providing a <strong>Direct Path</strong> to technical mastery through surgical documentation and scalable software utility.
         </div>
-    </div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./script.js"></script>
+    </header>
 
+    <nav>
+        <button class="pillar-btn p-ai active" onclick="setPillar('ai', '#00f2ff', 'rgba(0, 242, 255, 0.3)')">Oracle</button>
+        <button class="pillar-btn p-gaming" onclick="setPillar('gaming', '#ff00ff', 'rgba(255, 0, 255, 0.3)')">Arena</button>
+        <button class="pillar-btn p-hardware" onclick="setPillar('hardware', '#d4af37', 'rgba(212, 175, 55, 0.3)')">Armory</button>
+        <button class="pillar-btn p-tech" onclick="setPillar('tech', '#00ff88', 'rgba(0, 255, 136, 0.3)')">Vault</button>
+        <button class="pillar-btn p-forge" onclick="setPillar('forge', '#ff4444', 'rgba(255, 68, 68, 0.3)')">Forge</button>
+        <button class="pillar-btn p-foundry" onclick="setPillar('foundry', '#6a0dad', 'rgba(106, 13, 173, 0.6)')">Foundry</button>
+    </nav>
+
+    <section class="credentials-zone">
+        <details>
+            <summary>Google IT Support Professional Certificate <span class="arrow">▼</span></summary>
+            <div class="cert-details">
+                <span class="validated-tag">SURGICAL VALIDATION:</span>
+                The <strong>Foundational Blueprint</strong>. Validates end-to-end IT infrastructure mastery: enterprise networking, OS troubleshooting, and fleet-wide security protocols.
+            </div>
+        </details>
+        <details>
+            <summary>Google UX Design Professional Certificate <span class="arrow">▼</span></summary>
+            <div class="cert-details">
+                <span class="validated-tag">SURGICAL VALIDATION:</span>
+                Expertise in <strong>Agentic Experience (AX) Orchestration</strong>. Focused on human-centered design, inclusive architecture, and high-fidelity prototyping.
+            </div>
+        </details>
+        <details>
+            <summary>Advanced Infrastructure & Data Center Operations <span class="arrow">▼</span></summary>
+            <div class="cert-details">
+                <span class="validated-tag">SURGICAL VALIDATION:</span>
+                Verification of large-scale infrastructure maintenance, mission-critical hardware logic, and <strong>"Human-in-the-Loop"</strong> operational protocols.
+            </div>
+        </details>
+    </section>
+
+    <section class="search-zone">
+        <input type="text" id="globalSearch" placeholder="SEARCH THE ORACLE..." onkeyup="unifiedSearch()">
+    </section>
+
+    <div id="output-list"></div>
+
+    <script>
+        let currentPillar = 'ai';
+        const pillars = ['ai', 'gaming', 'hardware', 'tech', 'forge', 'foundry'];
+        const pillarNames = { ai:'THE ORACLE', gaming:'THE ARENA', hardware:'THE ARMORY', tech:'THE VAULT', forge:'THE FORGE', foundry:'THE FOUNDRY' };
+
+        function setPillar(p, color, glow) {
+            currentPillar = p;
+            document.documentElement.style.setProperty('--pillar-color', color);
+            document.documentElement.style.setProperty('--pillar-glow', glow);
+            document.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('active'));
+            const btn = Array.from(document.querySelectorAll('.pillar-btn')).find(b => b.textContent.toLowerCase() === p);
+            if (btn) btn.classList.add('active');
+            document.getElementById('globalSearch').placeholder = `SEARCH ${pillarNames[p]}...`;
+            unifiedSearch();
+        }
+
+        async function unifiedSearch() {
+            const q = document.getElementById('globalSearch').value.toLowerCase().trim();
+            const list = document.getElementById('output-list');
+            if (q.length < 2) { list.innerHTML = ""; return; }
+
+            try {
+                const res = await fetch(`./data/${currentPillar}.json`);
+                const data = await res.json();
+                const matches = data.filter(i => i.name.toLowerCase().includes(q) || (i.keywords && i.keywords.toLowerCase().includes(q)));
+
+                if (matches.length > 0) {
+                    list.innerHTML = matches.map(i => `
+                        <div class="card">
+                            <span class="tier-badge">${i.tier || 'VERIFIED LOGIC'}</span>
+                            <div style="font-size:1.5rem; font-weight:bold;">${i.name}</div>
+                            <p style="color:#aaa; line-height:1.6; margin:20px 0;">${i.info}</p>
+                            <a href="${i.link}" target="_blank" style="background:var(--pillar-color); color:#000; padding:12px 30px; border-radius:8px; font-weight:800; text-transform:uppercase; text-decoration:none; display:inline-block;">${i.cta || 'Acquire Path'}</a>
+                        </div>`).join('');
+                } else {
+                    for (let p of pillars) {
+                        if (p === currentPillar) continue;
+                        try {
+                            const otherRes = await fetch(`./data/${p}.json`);
+                            const otherData = await otherRes.json();
+                            if (otherData.some(i => i.name.toLowerCase().includes(q))) {
+                                list.innerHTML = `<div class="card" style="opacity:0.8; border-color:#333;">
+                                    <div style="font-size:1.2rem; font-weight:bold;">Logic Detected in ${pillarNames[p]}</div>
+                                    <p style="color:#aaa;">The requested logic is housed in an adjacent vault.</p>
+                                    <button onclick="setPillar('${p}', '${getPillarColor(p)}', '${getPillarGlow(p)}')" style="background:transparent; color:#fff; border:1px solid #fff; padding:10px 20px; border-radius:8px; cursor:pointer;">NAVIGATE TO ${pillarNames[p]}</button>
+                                </div>`;
+                                return;
+                            }
+                        } catch(e) {}
+                    }
+                    list.innerHTML = `<div class="card" onclick="window.open('https://google.com/search?q=${q}', '_blank')" style="cursor:pointer; opacity:0.7;">
+                        <span style="color:var(--sub-text); font-weight:900; font-size:0.7rem;">SYSTEM OVERRIDE</span>
+                        <div style="font-size:1.5rem; font-weight:bold; margin-top:10px;">ZERO LOCAL MATCHES</div>
+                        <p style="color:#aaa;">Directing to global web for "${q}"?</p>
+                    </div>`;
+                }
+            } catch (e) { console.log(e); }
+        }
+
+        function getPillarColor(p) {
+            const colors = {ai:'#00f2ff', gaming:'#ff00ff', hardware:'#d4af37', tech:'#00ff88', forge:'#ff4444', foundry:'#6a0dad'};
+            return colors[p];
+        }
+        function getPillarGlow(p) {
+            const glows = {ai:'rgba(0,242,255,0.3)', gaming:'rgba(255,0,255,0.3)', hardware:'rgba(212,175,55,0.3)', tech:'rgba(0,255,136,0.3)', forge:'rgba(255,68,68,0.3)', foundry:'rgba(106,13,173,0.6)'};
+            return glows[p];
+        }
+
+        window.onload = () => setPillar('ai', '#00f2ff', 'rgba(0, 242, 255, 0.3)');
+    </script>
+</body>
 </html>

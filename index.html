@@ -2,192 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingdom of Technical Wealth | Chris Howard</title>
+    <title>TriG201 | The Neon-Noir Universe</title>
     <style>
-        :root {
-            --bg: #030303;
-            --card-bg: #0a0a0a;
-            --text: #ffffff;
-            --sub-text: #777;
-            --pillar-color: #00f2ff; 
-            --pillar-glow: rgba(0, 242, 255, 0.3);
-        }
-
-        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            margin: 0; padding: 0;
-            display: flex; flex-direction: column; align-items: center;
-            min-height: 100vh; overflow-x: hidden;
-        }
-
-        @keyframes breathe {
-            0%, 100% { border-color: #222; box-shadow: 0 0 0 rgba(0,0,0,0); }
-            50% { border-color: var(--p-color); box-shadow: 0 0 15px var(--p-glow); }
-        }
-
-        /* --- TELEMETRY BAR --- */
-        .telemetry-bar {
-            width: 100%; background: #000; border-bottom: 1px solid #111;
-            padding: 10px 20px; display: flex; justify-content: space-around;
-            font-size: 0.7rem; font-family: 'Courier New', monospace; color: var(--sub-text);
-            position: sticky; top: 0; z-index: 1000; letter-spacing: 1px;
-        }
-        .telemetry-bar a { color: #fff; text-decoration: none; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; transition: 0.2s; }
-        .telemetry-bar a:hover { border-color: var(--pillar-color); color: var(--pillar-color); }
-
-        header { width: 100%; padding: 60px 20px 20px 20px; text-align: center; }
-        h1 { 
-            font-size: clamp(1.8rem, 5vw, 2.5rem); letter-spacing: 10px; color: var(--pillar-color); 
-            text-transform: uppercase; font-weight: 900; 
-            text-shadow: 0 0 20px var(--pillar-glow); margin: 0;
-        }
-        .mission-bar {
-            max-width: 800px; margin: 30px auto; padding: 25px;
-            background: #0d0d0d; border-left: 4px solid var(--pillar-color);
-            border-radius: 8px; text-align: left; font-size: 0.95rem; line-height: 1.7;
-        }
-
-        /* --- PILLAR NAVIGATION --- */
-        nav { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; padding: 0 20px; }
+        /* CORE DESIGN SYSTEM */
+        body { background-color: #050505; color: #fff; margin: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         
-        .pillar-btn {
-            background: #111; border: 1px solid #222; color: #555;
-            padding: 18px 22px; border-radius: 12px; cursor: pointer;
-            font-weight: bold; font-size: 0.7rem; text-transform: uppercase;
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
-            animation: breathe 3s infinite ease-in-out;
-        }
-        .pillar-btn svg { width: 22px; height: 22px; fill: currentColor; }
-        .pillar-btn.active { color: #fff; border-color: var(--p-color); background: rgba(255,255,255,0.05); box-shadow: 0 0 20px var(--p-glow); animation: none; }
+        /* GLYPHS & INTERACTION */
+        .glyph { font-size: 4rem; font-weight: 800; cursor: pointer; transition: 0.3s; pointer-events: none; }
+        #aero-glyph { color: #7b00ff; }
+        #onyx-glyph { color: #ff007b; }
+        
+        /* WASTELAND STAGE */
+        #wasteland-stage { height: 200vh; display: flex; flex-direction: column; }
+        #character-split { display: flex; height: 100vh; background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%); }
+        .side { flex: 1; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.5s; }
+        #aero-side { background: linear-gradient(to right, #000, #2e004f); border-right: 1px solid #7b00ff; }
+        #onyx-side { background: linear-gradient(to left, #000, #4f003a); border-left: 1px solid #ff007b; }
 
-        /* --- PULSE SIGNATURES --- */
-        .p-ai { --p-color: #00f2ff; --p-glow: rgba(0, 242, 255, 0.4); }
-        .p-gaming { --p-color: #ff00ff; --p-glow: rgba(255, 0, 255, 0.4); }
-        .p-hardware { --p-color: #d4af37; --p-glow: rgba(212, 175, 55, 0.4); }
-        .p-tech { --p-color: #00ff88; --p-glow: rgba(0, 255, 136, 0.4); }
-        .p-forge { --p-color: #ff4444; --p-glow: rgba(255, 68, 68, 0.4); }
-        .p-foundry { --p-color: #8a2be2; --p-glow: rgba(138, 43, 226, 0.6); }
-
-        /* --- CREDENTIALS ZONE --- */
-        .credentials-zone { width: 100%; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; gap: 12px; padding: 0 20px; }
-        details { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 12px; overflow: hidden; --p-color: var(--pillar-color); --p-glow: var(--pillar-glow); animation: breathe 4s infinite ease-in-out; }
-        details[open] { border-color: var(--pillar-color); box-shadow: 0 0 25px var(--pillar-glow); background: #111; animation: none; }
-        summary { padding: 18px 25px; cursor: pointer; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; color: var(--pillar-color); display: flex; justify-content: space-between; align-items: center; outline: none; }
-        .cert-details { padding: 25px; border-top: 1px solid #1a1a1a; color: #ccc; line-height: 1.7; font-size: 0.9rem; }
-        .validated-tag { display: block; color: var(--pillar-color); font-weight: 900; font-size: 0.6rem; margin-bottom: 10px; letter-spacing: 2px; }
-
-        /* --- SEARCH --- */
-        .search-zone { width: 100%; max-width: 700px; padding: 0 20px; margin-bottom: 50px; }
-        #globalSearch {
-            width: 100%; padding: 22px 35px; background: #000; 
-            border: 2px solid var(--pillar-color); border-radius: 60px; 
-            color: #fff; font-size: 1.1rem; outline: none;
-            box-shadow: 0 0 30px var(--pillar-glow); text-align: center;
-        }
-
-        #output-list { width: 100%; max-width: 750px; padding: 0 20px 100px 20px; }
-        .card { background: var(--card-bg); border: 1px solid #1a1a1a; border-radius: 20px; padding: 35px; margin-bottom: 25px; border-left: 5px solid var(--pillar-color); position: relative; }
+        /* ANIMATION RULES */
+        @keyframes glitch-stutter { 0% { transform: translate(-2px, 2px); } 100% { transform: translate(0); } }
+        .glitch-active { animation: glitch-stutter 0.2s infinite; }
+        .petal-active { box-shadow: inset 0 0 100px #ff007b; }
     </style>
 </head>
 <body>
 
-    <div class="telemetry-bar">
-        <div>CORE_VERSION: 1.0.0</div>
-        <div>OPERATOR: Chris Howard</div>
-        <div id="pillar-status">VAULT: ORACLE</div>
-        <a href="manual.html">SYSTEM_MANUAL</a>
-    </div>
-
-    <header>
-        <h1 id="site-title">Kingdom of Technical Wealth</h1>
-        <div class="mission-bar">
-            <strong>THE MISSION:</strong> Providing a <strong>Direct Path</strong> to technical mastery through surgical utility and human-first design logic.
+    <!-- HERO ENTRANCE -->
+    <section id="hero-entrance" class="section">
+        <h1>TriG201</h1>
+        <button id="start-journey" style="padding: 1rem 2rem; background: transparent; border: 1px solid #fff; color: #fff; cursor: pointer;">ENTER THE WASTELAND</button>
+    </section>
+    
+    <!-- WASTELAND STAGE -->
+    <main id="wasteland-stage">
+        <div id="character-split">
+            <div id="aero-side" class="side" onclick="playTrack('aero')">
+                <div id="aero-glyph" class="glyph">X</div>
+            </div>
+            <div id="onyx-side" class="side" onclick="playTrack('onyx')">
+                <div id="onyx-glyph" class="glyph">🌸</div>
+            </div>
         </div>
-    </header>
-
-    <nav>
-        <button class="pillar-btn p-ai active" onclick="setPillar('ai')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg><span>Oracle</span></button>
-        <button class="pillar-btn p-gaming" onclick="setPillar('gaming')"><svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S17.67 9 18.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg><span>Arena</span></button>
-        <button class="pillar-btn p-hardware" onclick="setPillar('hardware')"><svg viewBox="0 0 24 24"><path d="M22 15V9c0-1.1-.9-2-2-2h-1.5c0-1.1-.9-2-2-2h-9c-1.1 0-2 .9-2 2H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h1.5c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2H20c1.1 0 2-.9 2-2zM7 16H5V8h2v8zm10 0h-8V8h8v8zm2-8h2v8h-2V8z"/></svg><span>Armory</span></button>
-        <button class="pillar-btn p-tech" onclick="setPillar('tech')"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg><span>Vault</span></button>
-        <button class="pillar-btn p-forge" onclick="setPillar('forge')"><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg><span>Forge</span></button>
-        <button class="pillar-btn p-foundry" onclick="setPillar('foundry')"><svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM10.622 8.415l4.879 3.252a.4.4 0 010 .666l-4.88 3.252a.4.4 0 01-.621-.332V8.747a.4.4 0 01.622-.332z"/></svg><span>Foundry</span></button>
-    </nav>
-
-    <section class="credentials-zone">
-        <details>
-            <summary>GOOGLE IT SUPPORT PROFESSIONAL <span style="font-size:0.7rem;">[VERIFIED_INFRASTRUCTURE_LOGIC]</span></summary>
-            <div class="cert-details">
-                <span class="validated-tag">SURGICAL VALIDATION:</span>
-                <strong>THE DEFINITION:</strong> Verified mastery of the 5-layer OSI model, enterprise-scale network protocols, and mission-critical system administration.
-                <br><br>
-                <strong>THE IMPORTANCE:</strong> This is the <strong>Logic of Reliability</strong>. It validates the ability to ensure 99.9% uptime by diagnosing hardware and software friction at the root. It confirms a "Full-Stack" awareness where every packet is understood as part of a stable, managed organism.
-            </div>
-        </details>
-        
-        <details>
-            <summary>GOOGLE UX DESIGN PROFESSIONAL <span style="font-size:0.7rem;">[VERIFIED_ORCHESTRATION_LOGIC]</span></summary>
-            <div class="cert-details">
-                <span class="validated-tag">SURGICAL VALIDATION:</span>
-                <strong>THE DEFINITION:</strong> Mastery of High-Fidelity Design Logic, Inclusive Accessibility, and <strong>Agentic Experience (AX)</strong> architecture.
-                <br><br>
-                <strong>THE IMPORTANCE:</strong> This is the <strong>Logic of Sympathy</strong>. It proves the ability to architect interfaces between complex technical systems and the humans who operate them. It ensures that as AI agents evolve, the human remains in control, operating with zero cognitive friction.
-            </div>
-        </details>
-        
-    </section>
-
-    <section class="search-zone">
-        <input type="text" id="globalSearch" placeholder="SEARCH THE ORACLE..." onkeyup="unifiedSearch()">
-    </section>
-
-    <main id="output-list"></main>
+        <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <p id="now-playing">Select a path to initiate narrative playback...</p>
+        </div>
+    </main>
 
     <script>
-        const themes = {
-            ai: { color: '#00f2ff', glow: 'rgba(0, 242, 255, 0.3)', data: 'ai', label: 'ORACLE' },
-            gaming: { color: '#ff00ff', glow: 'rgba(255, 0, 255, 0.3)', data: 'gaming', label: 'ARENA' },
-            hardware: { color: '#d4af37', glow: 'rgba(212, 175, 55, 0.3)', data: 'hardware', label: 'ARMORY' },
-            tech: { color: '#00ff88', glow: 'rgba(0, 255, 136, 0.3)', data: 'tech', label: 'VAULT' },
-            forge: { color: '#ff4444', glow: 'rgba(255, 68, 68, 0.3)', data: 'forge', label: 'FORGE' },
-            foundry: { color: '#8a2be2', glow: 'rgba(138, 43, 226, 0.6)', data: 'foundry', label: 'FOUNDRY' }
+        /* AUDIO LIBRARY CONFIGURATION */
+        const audioLibrary = {
+            aero: { title: 'Shadow Step', path: 'audio/aero-track.mp3' },
+            onyx: { title: 'Venom Bloom', path: 'audio/onyx-track.mp3' }
         };
-        let currentPillar = 'ai';
 
-        function setPillar(p) {
-            currentPillar = p;
-            const theme = themes[p];
-            document.documentElement.style.setProperty('--pillar-color', theme.color);
-            document.documentElement.style.setProperty('--pillar-glow', theme.glow);
-            document.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector(`.p-${p}`).classList.add('active');
-            document.getElementById('globalSearch').placeholder = `SEARCH THE ${theme.label}...`;
-            document.getElementById('pillar-status').innerText = `VAULT: ${theme.label}`;
-            unifiedSearch();
-        }
+        let currentAudio = new Audio();
 
-        async function unifiedSearch() {
-            const q = document.getElementById('globalSearch').value.toLowerCase().trim();
-            const list = document.getElementById('output-list');
-            if (q.length < 2) { list.innerHTML = ""; return; }
-            try {
-                const res = await fetch(`./data/${themes[currentPillar].data}.json`);
-                const data = await res.json();
-                const matches = data.filter(i => i.name.toLowerCase().includes(q) || (i.keywords && i.keywords.toLowerCase().includes(q)));
-                list.innerHTML = matches.map(i => `
-                    <div class="card">
-                        <div style="font-size:1.6rem; font-weight:900;">${i.name}</div>
-                        <p style="color:#aaa; line-height:1.7; margin:20px 0;">${i.info}</p>
-                        <a href="${i.link}" style="background:var(--pillar-color); color:#000; padding:12px 30px; border-radius:8px; font-weight:800; text-transform:uppercase; text-decoration:none; display:inline-block;">Launch Utility</a>
-                    </div>`).join('');
-            } catch (e) { console.error(e); }
+        /* CORE INTERACTION PIPELINE */
+        document.getElementById('start-journey').addEventListener('click', () => {
+            document.getElementById('wasteland-stage').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function playTrack(char) {
+            const track = audioLibrary[char];
+            const el = document.getElementById(`${char}-side`);
+            const display = document.getElementById('now-playing');
+
+            // Audio Logic
+            currentAudio.pause();
+            currentAudio.src = track.path;
+            currentAudio.play().catch(e => console.log("User interaction required for audio."));
+            display.innerText = `NOW PLAYING: ${track.title}`;
+
+            // Visual Logic
+            if(char === 'aero') {
+                el.classList.add('glitch-active');
+                setTimeout(() => el.classList.remove('glitch-active'), 500);
+            } else {
+                el.classList.add('petal-active');
+                setTimeout(() => el.classList.remove('petal-active'), 1000);
+            }
         }
-        window.onload = () => setPillar('ai');
     </script>
 </body>
 </html>

@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <title>TriG201 | The Neon-Noir Universe</title>
     <style>
-        /* CORE DESIGN SYSTEM */
         body { background-color: #050505; color: #fff; margin: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         
-        /* GLYPHS & INTERACTION */
-        .glyph { font-size: 4rem; font-weight: 800; cursor: pointer; transition: 0.3s; pointer-events: none; }
-        #aero-glyph { color: #7b00ff; }
-        #onyx-glyph { color: #ff007b; }
-        
-        /* WASTELAND STAGE */
-        #wasteland-stage { height: 200vh; display: flex; flex-direction: column; }
-        #character-split { display: flex; height: 100vh; background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%); }
-        .side { flex: 1; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.5s; }
-        #aero-side { background: linear-gradient(to right, #000, #2e004f); border-right: 1px solid #7b00ff; }
-        #onyx-side { background: linear-gradient(to left, #000, #4f003a); border-left: 1px solid #ff007b; }
+        /* PLAYER UI */
+        #player-ui { position: fixed; bottom: 20px; left: 20px; z-index: 10; background: rgba(0,0,0,0.8); padding: 15px; border: 1px solid #333; }
+        select { background: #000; color: #fff; border: 1px solid #7b00ff; padding: 5px; cursor: pointer; }
 
-        /* ANIMATION RULES */
+        .glyph { font-size: 4rem; cursor: pointer; pointer-events: none; }
+        #wasteland-stage { height: 200vh; display: flex; flex-direction: column; }
+        #character-split { display: flex; height: 100vh; background: #050505; }
+        .side { flex: 1; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.5s; }
+        
         @keyframes glitch-stutter { 0% { transform: translate(-2px, 2px); } 100% { transform: translate(0); } }
         .glitch-active { animation: glitch-stutter 0.2s infinite; }
         .petal-active { box-shadow: inset 0 0 100px #ff007b; }
@@ -28,63 +23,68 @@
 </head>
 <body>
 
-    <!-- HERO ENTRANCE -->
     <section id="hero-entrance" class="section">
         <h1>TriG201</h1>
         <button id="start-journey" style="padding: 1rem 2rem; background: transparent; border: 1px solid #fff; color: #fff; cursor: pointer;">ENTER THE WASTELAND</button>
     </section>
     
-    <!-- WASTELAND STAGE -->
     <main id="wasteland-stage">
         <div id="character-split">
-            <div id="aero-side" class="side" onclick="playTrack('aero')">
-                <div id="aero-glyph" class="glyph">X</div>
-            </div>
-            <div id="onyx-side" class="side" onclick="playTrack('onyx')">
-                <div id="onyx-glyph" class="glyph">🌸</div>
-            </div>
+            <div id="aero-side" class="side" onclick="playCurrentTrack('aero')"><div class="glyph">X</div></div>
+            <div id="onyx-side" class="side" onclick="playCurrentTrack('onyx')"><div class="glyph">🌸</div></div>
         </div>
-        <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
-            <p id="now-playing">Select a path to initiate narrative playback...</p>
+        
+        <!-- HUMAN-CENTRIC CONTROLS -->
+        <div id="player-ui">
+            <p id="now-playing">Select a track to begin:</p>
+            <select id="track-selector" onchange="updateSelection()">
+                <!-- Populated by JS -->
+            </select>
         </div>
     </main>
 
     <script>
-        /* AUDIO LIBRARY CONFIGURATION */
-        const audioLibrary = {
-            onyx: { title: 'The Sakura Shadow', path: 'audio/The Sakura Shadow.mp3' },
-            aero: { title: 'Sakura Tree', path: 'audio/Sakura Tree.mp3' },
-            onyx: { title: 'Sakuras Walkway', path: 'audio/Sakura’s Walkway.mp3' },
-            aero: { title: 'Aero & Onyx', path: 'audio/Aero & Onyx.mp3' },
-        };
+        const audioLibrary = [
+            { id: 0, title: 'The Sakura Shadow', path: 'audio/The Sakura Shadow.mp3', char: 'onyx' },
+            { id: 1, title: 'Sakura Tree', path: 'audio/Sakura Tree.mp3', char: 'aero' },
+            { id: 2, title: 'Sakuras Walkway', path: 'audio/Sakura’s Walkway.mp3', char: 'onyx' },
+            { id: 3, title: 'Aero & Onyx', path: 'audio/Aero & Onyx.mp3', char: 'aero' }
+        ];
 
+        const selector = document.getElementById('track-selector');
         let currentAudio = new Audio();
 
-        /* CORE INTERACTION PIPELINE */
+        // Populate dropdown
+        audioLibrary.forEach(track => {
+            let opt = document.createElement('option');
+            opt.value = track.id;
+            opt.innerHTML = track.title;
+            selector.appendChild(opt);
+        });
+
+        function updateSelection() {
+            const track = audioLibrary[selector.value];
+            playCurrentTrack(track.char, track);
+        }
+
+        function playCurrentTrack(char, manualTrack = null) {
+            const track = manualTrack || audioLibrary[selector.value];
+            const el = document.getElementById(`${char}-side`);
+            
+            currentAudio.pause();
+            currentAudio.src = track.path;
+            currentAudio.play();
+            
+            document.getElementById('now-playing').innerText = `NOW PLAYING: ${track.title}`;
+
+            // Visual trigger
+            el.classList.add(char === 'aero' ? 'glitch-active' : 'petal-active');
+            setTimeout(() => el.classList.remove('glitch-active', 'petal-active'), 1000);
+        }
+
         document.getElementById('start-journey').addEventListener('click', () => {
             document.getElementById('wasteland-stage').scrollIntoView({ behavior: 'smooth' });
         });
-
-        function playTrack(char) {
-            const track = audioLibrary[char];
-            const el = document.getElementById(`${char}-side`);
-            const display = document.getElementById('now-playing');
-
-            // Audio Logic
-            currentAudio.pause();
-            currentAudio.src = track.path;
-            currentAudio.play().catch(e => console.log("User interaction required for audio."));
-            display.innerText = `NOW PLAYING: ${track.title}`;
-
-            // Visual Logic
-            if(char === 'aero') {
-                el.classList.add('glitch-active');
-                setTimeout(() => el.classList.remove('glitch-active'), 500);
-            } else {
-                el.classList.add('petal-active');
-                setTimeout(() => el.classList.remove('petal-active'), 1000);
-            }
-        }
     </script>
 </body>
 </html>

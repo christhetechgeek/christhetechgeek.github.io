@@ -24,7 +24,7 @@ body {
 }
 
 /* Split Screen & Mechanics */
-#wasteland-stage { height: 200vh; display: flex; flex-direction: column; }
+#wasteland-stage { height: auto; min-height: 200vh; display: flex; flex-direction: column; }
 #character-split { display: flex; height: 100vh; background: #050505; }
 
 .side { 
@@ -38,29 +38,28 @@ body {
 
 .glyph { font-size: 4rem; cursor: pointer; pointer-events: none; }
 
-/* Cinematic Gallery */
+/* Cinematic Gallery - Updated for Full Aspect Ratio */
 .cinematic-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
     background: #050505;
 }
 
 .gallery-item {
-    width: 200px;
-    height: 120px;
-    object-fit: cover;
-    filter: grayscale(80%) brightness(0.5);
+    width: 100%;
+    height: auto; /* Maintains full image aspect ratio */
+    display: block;
+    opacity: 0.5; /* Slight dimming for inactive state */
     transition: all 0.5s ease;
-    border: 1px solid #333;
+    border: 2px solid transparent;
 }
 
 .gallery-item.active-asset {
-    filter: grayscale(0%) brightness(1.2);
+    opacity: 1; /* Full color/brightness when active */
     border-color: #00f2ff;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* UI Elements */

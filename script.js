@@ -7,6 +7,7 @@ const audioLibrary = [
 
 const selector = document.getElementById('track-selector');
 let currentAudio = new Audio();
+let currentTrackIndex = 0; // Tracks the loop position
 
 // Initialize Selector
 audioLibrary.forEach(track => {
@@ -17,12 +18,13 @@ audioLibrary.forEach(track => {
 });
 
 function updateSelection() {
-    const track = audioLibrary[selector.value];
-    playCurrentTrack(track.char, track);
+    currentTrackIndex = parseInt(selector.value);
+    playCurrentTrack(audioLibrary[currentTrackIndex].char);
 }
 
-function playCurrentTrack(char, manualTrack = null) {
-    const track = manualTrack || audioLibrary[selector.value];
+function playCurrentTrack(char) {
+    // Update the index to the next track automatically
+    const track = audioLibrary[currentTrackIndex];
     const el = document.getElementById(`${char}-side`);
     const items = document.querySelectorAll('.gallery-item');
     
@@ -31,18 +33,23 @@ function playCurrentTrack(char, manualTrack = null) {
     currentAudio.src = track.path;
     currentAudio.play();
     document.getElementById('now-playing').innerText = `NOW PLAYING: ${track.title}`;
+    
+    // Update selector UI to match
+    selector.value = currentTrackIndex;
 
-    // Side Effect Logic
+    // Visual Feedback
     el.classList.add(char === 'aero' ? 'glitch-active' : 'petal-active');
     setTimeout(() => el.classList.remove('glitch-active', 'petal-active'), 1000);
 
     // Gallery Sync Logic
     items.forEach((item, index) => {
         item.classList.remove('active-asset');
-        // Aero activates images 0-3, Onyx activates 4-7
         if (char === 'aero' && index < 4) item.classList.add('active-asset');
         if (char === 'onyx' && index >= 4) item.classList.add('active-asset');
     });
+
+    // Increment for next click, loop back to 0 if at end
+    currentTrackIndex = (currentTrackIndex + 1) % audioLibrary.length;
 }
 
 // Scroll Logic

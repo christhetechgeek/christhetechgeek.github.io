@@ -2,7 +2,11 @@ const audioLibrary = [
     { id: 0, title: 'The Sakura Shadow', path: 'audio/The Sakura Shadow.mp3', char: 'onyx' },
     { id: 1, title: 'Sakura Tree', path: 'audio/Sakura Tree.mp3', char: 'aero' },
     { id: 2, title: 'Sakuras Walkway', path: 'audio/Sakura’s Walkway.mp3', char: 'onyx' },
-    { id: 3, title: 'Aero & Onyx', path: 'audio/Aero & Onyx.mp3', char: 'aero' }
+    { id: 3, title: 'Aero & Onyx', path: 'audio/Aero & Onyx.mp3', char: 'aero' },
+    { id: 4, title: 'Cyber Venom', path: 'audio/Cyber Venom.mp3', char: 'onyx' },
+    { id: 5, title: 'Shinobi', path: 'audio/Shinobi.mp3', char: 'aero' },
+    { id: 6, title: 'Shadow of Shinobi', path: 'audio/Shadow of Shinobi.mp3', char: 'onyx' },
+    { id: 7, title: 'Sword Through Neck', path: 'audio/Sword Through Neck.mp3', char: 'aero' }
 ];
 
 const selector = document.getElementById('track-selector');

@@ -1,29 +1,105 @@
 /* Core Reset & Base */
-body { background-color: #050505; color: #fff; margin: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-
-.section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-
-#hero-entrance { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/true-image.png'); background-size: cover; background-position: center; }
-
-#wasteland-stage { height: auto; min-height: 200vh; display: flex; flex-direction: column; }
-#character-split { display: flex; height: 100vh; background: #050505; }
-
-.side { flex: 1; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.5s; }
-.glyph { font-size: 4rem; cursor: pointer; pointer-events: none; }
-
-.cinematic-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 40px; background: #050505; }
-
-.gallery-item { 
-    width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; 
-    display: block; opacity: 0.5; transition: all 0.5s ease; 
-    border: 2px solid transparent; background: #111; 
+:root {
+    --bg-deep: #050505;
+    --neon-purple: #7b00ff;
+    --neon-cyan: #00f2ff;
+    --neon-pink: #ff007b;
+    --ui-border: #333;
 }
 
-.gallery-item.active-asset { opacity: 1; border-color: #00f2ff; transform: scale(1.02); }
+body { 
+    background-color: var(--bg-deep); 
+    color: #fff; 
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; 
+}
 
-#player-ui { position: fixed; bottom: 20px; left: 20px; z-index: 10; background: rgba(0,0,0,0.8); padding: 15px; border: 1px solid #333; }
-select { background: #000; color: #fff; border: 1px solid #7b00ff; padding: 5px; cursor: pointer; }
+h1, h3 { 
+    font-family: 'Courier New', monospace; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+}
 
+.section { 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Hero Entrance */
+#hero-entrance { 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/true-image.png');
+    background-size: cover; 
+    background-position: center; 
+}
+
+/* Split Screen & Mechanics */
+#wasteland-stage { height: auto; min-height: 200vh; display: flex; flex-direction: column; }
+#character-split { display: flex; height: 100vh; background: var(--bg-deep); }
+
+.side { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+    transition: 0.5s; 
+}
+
+.glyph { font-size: 4rem; cursor: pointer; pointer-events: none; }
+
+/* Cinematic Gallery - Performance Optimized */
+.cinematic-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+    background: var(--bg-deep);
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    border: 2px solid transparent;
+    background: #111;
+}
+
+.gallery-item.active-asset {
+    opacity: 1;
+    border-color: var(--neon-cyan);
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* UI Elements - Architectural Branding */
+#player-ui { 
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px; 
+    z-index: 10; 
+    background: rgba(0,0,0,0.8); 
+    padding: 15px; 
+    border: 1px solid var(--ui-border); 
+}
+
+select { 
+    background: #000; 
+    color: #fff; 
+    border: 1px solid var(--neon-purple); 
+    padding: 8px 12px; 
+    cursor: pointer; 
+}
+
+/* Animations */
 @keyframes glitch-stutter { 0% { transform: translate(-2px, 2px); } 100% { transform: translate(0); } }
 .glitch-active { animation: glitch-stutter 0.2s infinite; }
-.petal-active { box-shadow: inset 0 0 100px #ff007b; }
+.petal-active { box-shadow: inset 0 0 100px var(--neon-pink); }

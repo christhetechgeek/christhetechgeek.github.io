@@ -1,16 +1,12 @@
 {
   "projects": [
-    {
-      "id": 1,
-      "title": "The Sakura Shadow",
-      "audio": "/audio/The Sakura Shadow.mp3",
-      "thumb": "/img/img1.png"
-    },
-    {
-      "id": 2,
-      "title": "Sakura Tree",
-      "audio": "/audio/Sakura Tree.mp3",
-      "thumb": "/img/img2.png"
-    }
+    { "id": 0, "title": "The Sakura Shadow", "path": "audio/The Sakura Shadow.mp3", "char": "onyx", "thumb": "img1.png" },
+    { "id": 1, "title": "Sakura Tree", "path": "audio/Sakura Tree.mp3", "char": "aero", "thumb": "img2.png" },
+    { "id": 2, "title": "Sakuras Walkway", "path": "audio/Sakura’s Walkway.mp3", "char": "onyx", "thumb": "img3.png" },
+    { "id": 3, "title": "Aero & Onyx", "path": "audio/Aero & Onyx.mp3", "char": "aero", "thumb": "img4.png" },
+    { "id": 4, "title": "Cyber Venom", "path": "audio/Cyber Venom.mp3", "char": "onyx", "thumb": "img5.png" },
+    { "id": 5, "title": "Shinobi", "path": "audio/Shinobi.mp3", "char": "aero", "thumb": "img6.png" },
+    { "id": 6, "title": "Shadow of Shinobi", "path": "audio/Shadow of Shinobi.mp3", "char": "onyx", "thumb": "img7.png" },
+    { "id": 7, "title": "Sword Through Neck", "path": "audio/Sword Through Neck.mp3", "char": "aero", "thumb": "img8.png" }
   ]
 }

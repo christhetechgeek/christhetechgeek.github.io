@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "The Sakura Shadow",
+      "audio": "/audio/The Sakura Shadow.mp3",
+      "thumb": "/img/img1.png"
+    },
+    {
+      "id": 2,
+      "title": "Sakura Tree",
+      "audio": "/audio/Sakura Tree.mp3",
+      "thumb": "/img/img2.png"
+    }
+  ]
+}

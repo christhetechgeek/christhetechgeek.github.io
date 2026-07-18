@@ -18,7 +18,7 @@ body {
 
 /* Hero Entrance */
 #hero-entrance { 
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('true-image.png');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/true-image.png');
     background-size: cover; 
     background-position: center; 
 }

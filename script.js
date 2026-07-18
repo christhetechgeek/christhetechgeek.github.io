@@ -3,14 +3,12 @@ const selector = document.getElementById('track-selector');
 let currentAudio = new Audio();
 let currentTrackIndex = 0;
 
-// Initialize Library from JSON
 async function initLibrary() {
     try {
         const response = await fetch('data/assets.json');
         const data = await response.json();
         audioLibrary = data.projects;
 
-        // Initialize Selector
         audioLibrary.forEach(track => {
             let opt = document.createElement('option');
             opt.value = track.id;
@@ -22,7 +20,6 @@ async function initLibrary() {
     }
 }
 
-// Keep existing play logic, now using dynamic audioLibrary
 function playCurrentTrack(char) {
     const track = audioLibrary[currentTrackIndex];
     if (!track) return;
@@ -30,6 +27,7 @@ function playCurrentTrack(char) {
     const el = document.getElementById(`${char}-side`);
     const items = document.querySelectorAll('.gallery-item');
     
+    currentAudio.preload = "auto";
     currentAudio.pause();
     currentAudio.src = track.path;
     currentAudio.play();
@@ -58,5 +56,4 @@ document.getElementById('start-journey').addEventListener('click', () => {
     document.getElementById('wasteland-stage').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Run initialization
 initLibrary();
